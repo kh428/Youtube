@@ -1,3 +1,31 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px
+}
+
+.logo {
+    height: 20px;
+    width: 100%;
+}
+
+.header img {
+    object-fit: cover;
+    height: 20px;
+    float: left;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    font-size: 21px;
+    font-family: Roboto;
+    letter-spacing: -1px;
+}
