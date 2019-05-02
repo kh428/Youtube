@@ -5,6 +5,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {username: '', password: ''};
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     update(field) {
@@ -17,6 +18,14 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        this.props.processForm({
+            username: "Guest",
+            password: "123123123"
+        });
     }
 
     renderErrors() {
@@ -32,25 +41,44 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        let demologin = null;
+        if (this.props.formType === 'Log In') {
+        demologin = (
+            <button className="demo-submit" onClick={this.handleDemoSubmit}>
+                <span>Demo User Login</span>
+            </button>
+        )
+    }
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to Fake YourTube!
-                <br />
-                    Please {this.props.formType} or {this.props.navLink}
+                    <img src="https://www.festisite.com/static/partylogo/img/logos/google.png" alt=""/>
+                    <br />
+                        <div className="signinfont">
+                        Sign In 
+                        </div>
+                    <br />
+                        to continue to YourTube
+                    <br />
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
-                        <label>Username:
-                            <input type="text" value={this.state.username} onChange={this.update('username')} className="login-input"/>
-                        </label>
+                            <label>Username:
+                                <br />
+                                <input type="text" value={this.state.username} onChange={this.update('username')} className="login-input" placeholder="email"/>
+                            </label>
                         <br />
-                        <label>Password:
-                            <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
-                        </label>
+                            <label>Password:
+                                <br />
+                                <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" placeholder="password"/>
+                            </label>
                         <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                            <div className="createandlogin">
+                                {this.props.navLink}
+                            <input className="session-submit" type="submit" value={this.props.formType} />
+                            </div>
                     </div>
+                        {demologin}
                 </form>
             </div>
         );
