@@ -17,11 +17,11 @@ class Greeting extends React.Component {
 
     handleClick() {
         switch(this.state.dropdown){
-            case true:
-                this.setState({ dropdown: false });
+            case false:
+                this.setState({ dropdown: true });
             break;
             default: 
-                this.setState({ dropdown: true });
+                this.setState({ dropdown: false });
         }
     }
 
