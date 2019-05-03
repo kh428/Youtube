@@ -107,6 +107,118 @@ h1 {
 }
 
 .header-name {
+    background-color: #aa47bc;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 6px;
+    margin: 8px;
+    margin-top: 0px;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+
+     position: relative;
+    display: inline-block;
+
+}
+
+.header-name-drop {
+    background-color: #aa47bc;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    padding: 8px;
+    margin: 9px;
+    margin-top: 0px;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+
+     position: relative;
+    display: inline-block;
+
+}
+
+.dropdown {
+    display: absolute;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    margin-right: 50px;
+    right: 0;
+    box-shadow: 5px 5px 7px rgba(88, 88, 88, 0.219);
+
+}
+
+.hidden {
+    display: none;
+}
+
+.userinfodrop {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    height: 40px;
+    background-color: white;
     margin: 0px;
+    padding: 10px;
+    // border-bottom-color: grey;
+    // border: 10px;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+.logoutbutton {
+    display: flex;
+    height: 40px;
+    width: 200px;
+    padding: 0px 36px 0px 16px;
+    align-items: center;
+    font-family: 'Roboto', 'Noto', sans-serif;
     font-size: 20px;
+    background-color: white;
+    outline: none;
+    border: none;
+
+}
+
+.logoutbutton:hover {
+  background-color: rgba(192, 192, 192, 0.493); /* Green */
+}
+
+.logouticon {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.usericon {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.login-signup {
+    justify-content: center;
+    display: flex;
+    border: 1px solid blue;
+    padding: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    color: blue;
+    width: 100px;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-size: 14px;
+}
+
+.login-signup a {
+    text-decoration: none;
+    text-decoration-color: blue;
+}
+
+.loginusericon {
+    margin-right: 10px;
 }

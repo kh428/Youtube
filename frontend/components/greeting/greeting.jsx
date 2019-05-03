@@ -3,36 +3,61 @@ import { Link } from 'react-router-dom';
 
 
 
-const Greeting = ({ currentUser, logout }) => {
-    // constructor(props) {
-    //     super(props);
+// const Greeting = ({ currentUser, logout }) => {
 
-    //     this.state = {
-    //         dropdown: false
-    //     }
-    // }
+class Greeting extends React.Component {
+    constructor(props) {
+        super(props);
 
-    // handleClick() {
-    //     this.setState({ dropdown: true })
-    // }
+        this.state = {
+            dropdown: false
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-    const sessionLinks = () => (
+    handleClick() {
+        switch(this.state.dropdown){
+            case true:
+                this.setState({ dropdown: false });
+            break;
+            default: 
+                this.setState({ dropdown: true });
+        }
+    }
+
+    render() {
+        let currentUser = this.props.currentUser;
+        let logout = this.props.logout;
+
+        const sessionLinks = () => (
         <nav className="login-signup">
-            <Link to="/login">Login</Link>
+                <i class="loginusericon fas fa-user"></i>
+            <Link to="/login">SIGN IN</Link>
         </nav>
     );
     const personalGreeting = () => (
         <hgroup className="header-group">
-            <h2 className="header-name">{currentUser.username}</h2>
-            <br />
-            <button className="header-button" onClick={logout}>Log Out
-                {/* <div className={this.state.dropdown ? "dropdown" : "hidden"}></div> */}
+            
+            
+            
+            <button className="header-name" onClick={this.handleClick}>{currentUser.username.slice(0,1)}
             </button>
+            <br />
+            
+            <div className={this.state.dropdown ? "dropdown" : "hidden"}>
+                <p class="userinfodrop">
+                    <button className="header-name-drop" onClick={this.handleClick}>{currentUser.username.slice(0, 1)}</button>
+                    {currentUser.username}@gmail.com</p>
+                <button className="logoutbutton" onClick={logout}>
+                    <i className="logouticon fas fa-sign-out-alt"></i>
+                Log Out</button>
+            </div>
+
         </hgroup>
     );
 
     return currentUser ? personalGreeting() : sessionLinks();
-};
-
+    };
+}
 
 export default Greeting;
