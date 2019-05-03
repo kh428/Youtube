@@ -1,5 +1,10 @@
 <main id="root"></main>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script>
+window.images={
+  logo: "<%= image_url("logo.png") %>"
+}
+</script>
 
 <% if logged_in? %>
   <script id="bootstrap-current-user" type="text/javascript">

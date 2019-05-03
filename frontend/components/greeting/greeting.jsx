@@ -36,7 +36,7 @@ class Greeting extends React.Component {
 
         const sessionLinks = () => (
         <nav className="login-signup">
-                <i class="loginusericon fas fa-user"></i>
+                <i className="loginusericon fas fa-user"></i>
             <Link to="/login">SIGN IN</Link>
         </nav>
     );
@@ -50,7 +50,7 @@ class Greeting extends React.Component {
             <br />
             
             <div className={this.state.dropdown ? "dropdown" : "hidden"}>
-                <p class="userinfodrop">
+                <p className="userinfodrop">
                     <button className="header-name-drop" onClick={this.handleClick}>{currentUser.username.slice(0, 1)}</button>
                     {currentUser.username}@gmail.com</p>
                 <button className="logoutbutton" onClick={this.handleLogout}>

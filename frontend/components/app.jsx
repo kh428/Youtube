@@ -7,7 +7,7 @@ const App = () => (
     <div>
         <div className="header"> 
             <div className="logo">
-                <img src="https://cdn.pixabay.com/photo/2016/11/19/03/08/youtube-1837872_960_720.png" className="youtubelogo"/>
+                <img src={window.images.logo} className="youtubelogo"/>
                 <h1>YourTube</h1>
             </div>
             <GreetingContainer />
