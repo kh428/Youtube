@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :videos, 
+  foreign_key: :user_id,
+  class_name: :Video
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     if user && user.is_password?(password)

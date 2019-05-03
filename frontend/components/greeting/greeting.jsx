@@ -13,6 +13,7 @@ class Greeting extends React.Component {
             dropdown: false
         }
         this.handleClick = this.handleClick.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleClick() {
@@ -23,6 +24,10 @@ class Greeting extends React.Component {
             default: 
                 this.setState({ dropdown: false });
         }
+    }
+
+    handleLogout() {
+        this.props.logout().then(() => this.setState( {dropdown: false} ));
     }
 
     render() {
@@ -48,7 +53,7 @@ class Greeting extends React.Component {
                 <p class="userinfodrop">
                     <button className="header-name-drop" onClick={this.handleClick}>{currentUser.username.slice(0, 1)}</button>
                     {currentUser.username}@gmail.com</p>
-                <button className="logoutbutton" onClick={logout}>
+                <button className="logoutbutton" onClick={this.handleLogout}>
                     <i className="logouticon fas fa-sign-out-alt"></i>
                 Log Out</button>
             </div>
