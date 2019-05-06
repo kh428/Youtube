@@ -3,12 +3,16 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute } from '../util/route_util';
+import {Link} from "react-router-dom";
+
 const App = () => (
     <div>
         <div className="header"> 
             <div className="logo">
-                <img src={window.images.logo} className="youtubelogo"/>
-                <h1>YourTube</h1>
+                <Link to="/">
+                    <img src={window.images.logo} className="youtubelogo"/>
+                    <h1 className="yourtube">YourTube</h1>
+                </Link>
             </div>
             <GreetingContainer />
         </div>

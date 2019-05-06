@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_171836) do
+ActiveRecord::Schema.define(version: 2019_05_06_184930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2019_05_03_171836) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "channels", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_channels_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "password_digest", null: false
@@ -48,16 +57,12 @@ ActiveRecord::Schema.define(version: 2019_05_03_171836) do
 
   create_table "videos", force: :cascade do |t|
     t.string "title", null: false
-    t.string "url", null: false
     t.text "description"
     t.integer "channel_id", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["channel_id"], name: "index_videos_on_channel_id"
     t.index ["title"], name: "index_videos_on_title"
-    t.index ["url"], name: "index_videos_on_url", unique: true
-    t.index ["user_id"], name: "index_videos_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
