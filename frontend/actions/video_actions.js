@@ -12,7 +12,6 @@ const receiveVideos = data => ({
 });
 
 const receiveVideo = video => {
-
     return {
         type: RECEIVE_VIDEO,
         video

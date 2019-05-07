@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class VideoIndex extends React.Component {
     constructor(props) {
@@ -17,7 +18,12 @@ class VideoIndex extends React.Component {
                 <div>
                 <h1>Recommended</h1>
                 {this.props.videos.map(video => {
-                    return <li>{video.title}</li>;
+                    return (
+                    <Link to={`/videos/${video.id}`}>
+                    <img src={video.thumbnail_url}/>
+                    {video.title}
+                    </Link>
+                );
                 })}
                 </div>
             );

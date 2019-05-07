@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :channels
+  has_one :channel
   
   has_many :videos, 
   through: :channels,

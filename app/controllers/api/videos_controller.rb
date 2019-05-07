@@ -13,7 +13,8 @@ class Api::VideosController < ApplicationController
         
         @user = current_user
         
-        @video = Video.new(video_params, current_user.id)
+        @video = Video.new(video_params)
+        @video.channel_id = current_user.channel.id
 
         if @video.save
             render :show
@@ -44,7 +45,7 @@ class Api::VideosController < ApplicationController
 
     private 
     def video_params
-        params.require(:video).permit(:title, :description)
+        params.require(:video).permit(:title, :description, :video, :thumbnail)
     end
 
 end

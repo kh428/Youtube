@@ -4,6 +4,8 @@ class Video < ApplicationRecord
     
     has_one_attached :video
 
+    has_one_attached :thumbnail
+
     belongs_to :channel
 
     has_one :user, 

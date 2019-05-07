@@ -2,9 +2,12 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
-import { AuthRoute } from '../util/route_util';
-import {Link} from "react-router-dom";
-import VideoIndex from "./videos/video_index_container";
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import {Link, Route} from "react-router-dom";
+import VideoIndexContainer from "./videos/video_index_container";
+import VideoShowContainer from "./videos/video_show_container";
+import VideoUploadContainer from "./videos/video_upload_container";
+import VideoEditContainer from "./videos/video_edit_container";
 
 const App = () => (
     <div>
@@ -15,10 +18,16 @@ const App = () => (
                     <h1 className="yourtube">YourTube</h1>
                 </Link>
             </div>
+                <Link to="/upload">
+                    Upload 
+                </Link>
             <GreetingContainer />
+            
         </div>
-        <VideoIndex />
-        
+        <Route exact path="/" component={VideoIndexContainer}/>
+        <Route path="/videos/:videoId" component={VideoShowContainer}/>
+        <ProtectedRoute exact path="/upload" component={VideoUploadContainer}/>
+        <ProtectedRoute exact path="/edit" component ={VideoEditContainer}/>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     </div>

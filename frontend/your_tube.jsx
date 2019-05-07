@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
-    window.banana= videoapi;
+    window.videoapi= videoapi;
     window.videoaction = videoaction;
 
     const root = document.getElementById('root');
