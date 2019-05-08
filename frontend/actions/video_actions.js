@@ -8,7 +8,8 @@ export const CLEAR_VIDEOS = 'CLEAR_VIDEOS';
 
 const receiveVideos = data => ({
     type: RECEIVE_VIDEOS,
-    videos: data.videos
+    videos: data.videos,
+    users: data.users
 });
 
 const receiveVideo = video => {

@@ -44,7 +44,6 @@ class VideoShow extends React.Component {
             
         let editVideoButton;
         let subscribeButton;
-        // debugger
         if (this.props.currentUser && this.props.currentUser.id === this.props.video.user_id) {
             editVideoButton = <button className="editvideobutton" onClick={this.handleEditLink}>EDIT VIDEO</button>
         } else {
@@ -53,27 +52,31 @@ class VideoShow extends React.Component {
         
         return(
             <div>
-                <h1>
-                <video src={this.props.video.video_url} controls></video>
-                </h1>
-                <li>
-                {this.props.video.title}
-                </li>
-                <li>
-                    {this.props.username}
-                </li>
-                <li>
-                    {this.dateUploaded()}
-                </li>
-                <li>
-                    {/* <Link to="/videos/:videoId/edit"> */}
-                    {editVideoButton}
-                    {/* </Link> */}
-                </li>
+    
+                <video src={this.props.video.video_url} controls className="videoItSelf"></video>
                 
-                <li>
-                {this.props.video.description || "no description"}
-                </li>
+                <div className="videoTitle">
+                    {this.props.video.title}
+                </div>
+                <div className="videosubHeaderBox">
+                    <div className="usernameHeader"> 
+                        <div className="usernameDateUploaded">
+                            <button className="uploadersProfile">{this.props.user.username.slice(0, 1)}</button>
+                            <div>
+                            {this.props.user.username}
+                            </div>
+                            <div className="dateuploaded">
+                                Published on {this.dateUploaded()}
+                            </div>
+                        </div>
+                        <div className="editVideoButtononPage">
+                            {editVideoButton}
+                        </div>
+                    </div>
+                    <div className="description">
+                        {this.props.video.description || "no description"}
+                    </div>
+                </div>
                 
                 
             </div>

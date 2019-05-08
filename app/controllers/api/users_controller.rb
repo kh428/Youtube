@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         
         if @user.save
+            Channel.create!({name: @user.username, user_id: @user.id})
             login(@user)
             render "api/users/show"
         else
