@@ -1,3 +1,118 @@
 // Place all the styles related to the Api::videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.upLoadPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 85%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 7px rgba(88, 88, 88, 0.219);
+}
+
+.fas {
+    font-weight: 900;
+    font-size: 0.6cm;
+}
+
+
+.titleInput {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.descriptionInput {
+    width: 50%;
+    padding: 12px 20px;
+    height: 375px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.publishButton {
+  background-color: rgb(74, 74, 255);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.cameraLogo {
+    margin-right: 15px;
+    padding: 8px;
+
+}
+
+.videoUploadButton {
+    background-color: rgb(74, 74, 255);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.typeOfThumbnail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.uploadBackground {
+    background-color: rgb(219, 219, 219);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.thumbnailText {
+    justify-content: space-between;
+}
+
+.displayingThumbnail {
+    width: 320px;
+    height: 180px;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 15px;
+    padding-left: 60px;
+}
+
+.videoTitle {
+    font-size: 20px;
+}
+
+.indexBackground {
+    background-color: rgb(233, 233, 233);
+    
+}
+
+.oneVideo {
+    width: 320px;
+    padding: 20px;
+}
+
+.allVideos {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    padding-top: 20px;
+    
+}

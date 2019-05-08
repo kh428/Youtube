@@ -9,6 +9,10 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    // font-size: 10px;
+    // -webkit-box-shadow: 0 8px 6px -6px black;
+	// -moz-box-shadow: 0 8px 6px -6px black;
+    // box-shadow: 0 8px 6px -6px black;
 }
 
 .logo {
@@ -19,13 +23,17 @@
     -webkit-text-decoration: none;
 }
 
+
 .yourtube {
     text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Roboto;
 }
 
 .header img {
     object-fit: cover;
-    height: 20px;
+    height: 30px;
     float: left;
 }
 
@@ -115,8 +123,8 @@ h1 {
 
 .header-name {
     background-color: #aa47bc;
-    width: 32px;
-    height: 32px;
+    width: 43px;
+    height: 43px;
     border-radius: 50%;
     padding: 6px;
     margin: 8px;
@@ -125,7 +133,7 @@ h1 {
     outline: none;
     border: none;
     text-align: center;
-    font-size: 16px;
+    font-size: 25px;
 
      position: relative;
     display: inline-block;

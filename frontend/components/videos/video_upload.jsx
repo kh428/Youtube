@@ -51,25 +51,24 @@ class VideoUpload extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-            <input type="file" onChange={this.handleFile}/>
-            <label>
-            Title:
-            <input type="text" value={this.state.title} onChange={this.handleInput("title")}/>
-            </label>
-
-                <label>
-                    Description:
-            <textarea type="text" value={this.state.description} onChange={this.handleInput("description")} />
+            <div className="uploadBackground">
+                <form onSubmit={this.handleSubmit} className="upLoadPage">
+                    <label>
+                        <input className="videoUploadButton" type="file" onChange={this.handleFile}/>
+                    </label>
+                    <input className="titleInput" type="text" value={this.state.title} onChange={this.handleInput("title")} placeholder="Title"/>
+                    <textarea className="descriptionInput" type="text" value={this.state.description} onChange={this.handleInput("description")} placeholder="Description" />
+                
+                <label className="thumbnailText">
+                    Thumbnail
+                    <input type="file" onChange={this.handleThumbnail} />
                 </label>
-                <label>
-                    thumbnail:
-                <input type="file" onChange={this.handleThumbnail} />
-                </label>
-                <input type="submit" value="submit"/>
-
-            
+                    <div className="typeOfThumbnail">
+                        TIFF, JPEG, GIF, PNG
+                    </div>
+                <input className="publishButton" type="submit" value="Publish"/>
             </form>
+                </div>
         );
     }
 }

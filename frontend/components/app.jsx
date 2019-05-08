@@ -19,7 +19,7 @@ const App = () => (
                 </Link>
             </div>
                 <Link to="/upload">
-                    Upload 
+                <i class="cameraLogo fas fa-video"></i>
                 </Link>
             <GreetingContainer />
             
