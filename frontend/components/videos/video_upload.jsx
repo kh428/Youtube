@@ -11,9 +11,33 @@ class VideoUpload extends React.Component {
             thumbnail: null
         };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFile = this.handleFile.bind(this);
-    this.handleThumbnail = this.handleThumbnail.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        this.handleThumbnail = this.handleThumbnail.bind(this);
+    }
+
+    componentDidMount() {
+        if (this.props.match && this.props.match.params.videoId) {
+            this.props.fetchVideo(this.props.match.params.videoId);
+        }        
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const isVideoLoaded =
+          this.props.video &&
+          this.props.video.title !== prevState.title;
+
+        if (isVideoLoaded) {
+            const { video: {
+                title, description, thumbnail
+            } } = this.props;
+
+            this.setState({
+              title,
+              description,
+              thumbnail
+            });
+        }
     }
 
     handleInput(field) {
@@ -32,12 +56,46 @@ class VideoUpload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
         const formData = new FormData();
-        formData.append("video[title]", this.state.title);
-        formData.append("video[description]", this.state.description);
-        formData.append("video[video]", this.state.file);
-        formData.append("video[thumbnail]", this.state.thumbnail);
-        this.props.createVideo(formData).then(video => this.props.history.push('/'));
+        const { title, description, file, thumbnail } = this.state;
+        const {
+          params: { videoId }
+        } = this.props.match;
+        const isEditing = this.props.location.pathname.includes("edit");
+
+        if (isEditing) {
+            // NOTE: we dont allow editing video itself
+            formData.append("video[id]", videoId);
+            formData.append("video[title]", title);
+            formData.append("video[description]", description);
+            formData.append("video[thumbnail]", thumbnail);
+
+            const params = {
+                id: videoId,
+                video: {
+                    title,
+                    description,
+                    thumbnail,
+                }
+            }
+
+            this.props
+              .updateVideo(params)
+              .then(video =>
+                this.props.history.push(`/videos/${videoId}`)
+              );
+        } else {
+            formData.append("video[title]", title);
+            formData.append("video[description]", description);
+            formData.append("video[thumbnail]", thumbnail);
+            formData.append("video[video]", file);
+            this.props
+                .createVideo(formData)
+                .then(video =>
+                this.props.history.push("/")
+                );
+        }
     }
 
     renderErrors() {
@@ -49,8 +107,6 @@ class VideoUpload extends React.Component {
     }
 
     render() {
-        console.log("hello!")
-
         return (
             <div className="uploadBackground">
                 <form onSubmit={this.handleSubmit} className="upLoadPage">

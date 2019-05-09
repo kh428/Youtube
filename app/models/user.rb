@@ -10,9 +10,7 @@ class User < ApplicationRecord
 
   has_one :channel, dependent: :destroy
   
-  has_many :videos, 
-  through: :channels,
-  source: :videos
+  has_many :videos, through: :channel, source: :videos
   
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
