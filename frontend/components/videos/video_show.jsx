@@ -54,8 +54,7 @@ class VideoShow extends React.Component {
         return(
             <div className="wholeThing">
                 <div className="LeftSectionofShow">
-                <video src={this.props.video.video_url} controls className="videoItSelf"></video>
-                
+                    <video className="videoItSelf" src={this.props.video.video_url} controls></video>
                 <div className="videoTitleshow">
                     {this.props.video.title}
                 </div>

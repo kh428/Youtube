@@ -124,8 +124,7 @@
 }
 
 .videoItSelf {
-    width: 70%;
-    margin-left: 30px;
+    width: 100%;
 }
 
 .videoTitleindex {
@@ -136,9 +135,7 @@
 }
 
 .videoTitleshow {
-    width: 70%;
     font-size: 25px;
-    margin-left: 30px;
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -182,17 +179,13 @@ button.editvideobutton {
 }
 
 .description {
-    width: 70%;
     padding: 30px;
     font-size: 20px;
-    margin-left: 59px;
 }
 
 .videosubHeaderBox {
     border-bottom: 2px solid grey;
     border-top: 2px solid grey;
-    width: 70%;
-    margin-left: 30px;
 }
 
 .uploadersProfile {
@@ -229,5 +222,5 @@ button.editvideobutton {
 }
 
 .LeftSectionofShow {
-    width: 80%;
+    // width: 80%;
 }
