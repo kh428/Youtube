@@ -51,65 +51,77 @@ class VideoShow extends React.Component {
             subscribeButton = <button className="subscribeButton" onClick={this.handleSubscribe}>SUBSCRIBE</button>
         }
         
-        return(
-            <div className="wholeThing">
-                <div className="LeftSectionofShow">
-                    <video className="videoItSelf" src={this.props.video.video_url} controls></video>
-                <div className="videoTitleshow">
-                    {this.props.video.title}
-                </div>
-                <div className="videosubHeaderBox">
-                
-                    <div className="usernameHeader"> 
-                        <div className="usernameHeaderLeft">
-                                <div>
-                                    <button className="uploadersProfile">{this.props.user.username.slice(0, 1)}</button>
-                                </div>
-                            <div className="usernameDateUploaded">
-                                <div className="username">
-                                    {this.props.user.username}
-                                </div>
-                                <div className="dateuploaded">
-                                    Published on {this.dateUploaded()}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="editVideoButtononPage">
-                            {editVideoButton}
-                        </div>
+        return (
+          <div className="wholeThing">
+            <div className="LeftSectionofShow">
+              <video
+                className="videoItSelf"
+                src={this.props.video.video_url}
+                controls
+              />
+              <div className="videoTitleshow">
+                {this.props.video.title}
+              </div>
+              <div className="videosubHeaderBox">
+                <div className="usernameHeader">
+                  <div className="usernameHeaderLeft">
+                    <div>
+                      <button className="uploadersProfile">
+                        {this.props.user.username.slice(0, 1)}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="userDescContainer">
+                    <div className="usernameDateUploaded">
+                      <div className="username">
+                        {this.props.user.username}
+                      </div>
+                      <div className="dateuploaded">
+                        Published on {this.dateUploaded()}
+                      </div>
                     </div>
                     <div className="description">
-                        {this.props.video.description || "no description"}
+                      {this.props.video.description || "no description"}
                     </div>
-                </div>
-                </div>
-                    <div className="nextVideos">
-                    {this.props.videos.slice(0,6).map(video => {
-                        if (video.id === this.props.video.id) return null;
-                        return (
-                                <Link className="oneVideoshow" key={video.id} to={`/videos/${video.id}`}>
-                                    <div>
-                                        <img className="displayingThumbnailshow" src={video.thumbnail_url} />
-                                    </div>
-                                    <div className="videoTitleindexshow">
-                                        {video.title}
-                                    </div>
-                                    {video.username}
-                                </Link>
-                            
+                  </div>
 
-                        );
-                    })}
+                  <div className="editVideoButtononPage">
+                    {editVideoButton}
+                  </div>
                 </div>
-                </div>
-                
-            
-            // <ProtectedRoute exact path="/videos/:videoId/edit" component={VideoEditContainer} />
-                //this.props.comments
-                //more videos
-                //this.props.views
-                //this.porps.likes
-            )
+              </div>
+            </div>
+            <div className="nextVideos">
+              {this.props.videos.slice(0, 6).map(video => {
+                if (video.id === this.props.video.id) return null;
+                return (
+                  <Link
+                    className="oneVideoshow"
+                    key={video.id}
+                    to={`/videos/${video.id}`}
+                  >
+                    <div>
+                      <img
+                        className="displayingThumbnailshow"
+                        src={video.thumbnail_url}
+                      />
+                    </div>
+                    <div className="videoTitleindexshow">
+                      {video.title}
+                    </div>
+                    {video.username}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          // <ProtectedRoute exact path="/videos/:videoId/edit" component={VideoEditContainer} />
+          //this.props.comments
+          //more videos
+          //this.props.views
+          //this.porps.likes
+        );
         }
 
         }
