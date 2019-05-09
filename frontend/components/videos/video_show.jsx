@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import VideoIndexContainer from "./video_index_container";
 
 
 class VideoShow extends React.Component {
@@ -12,17 +13,17 @@ class VideoShow extends React.Component {
 
     componentDidMount() {
         // this.props.clearVideos();
-        this.props.fetchVideo(this.props.match.params.videoId);
+        this.props.fetchVideos();
         // this.props.fetchVideos();
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-            this.props.clearVideos();
-            this.props.fetchVideo(this.props.match.params.videoId);
-            this.props.fetchVideos();
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
+    //         this.props.clearVideos();
+    //         this.props.fetchVideo(this.props.match.params.videoId);
+    //         this.props.fetchVideos();
+    //     }
+    // }
 
     dateUploaded() {
         let date = new Date(this.props.video.created_at);
@@ -51,22 +52,27 @@ class VideoShow extends React.Component {
         }
         
         return(
-            <div>
-    
+            <div className="wholeThing">
+                <div className="LeftSectionofShow">
                 <video src={this.props.video.video_url} controls className="videoItSelf"></video>
                 
-                <div className="videoTitle">
+                <div className="videoTitleshow">
                     {this.props.video.title}
                 </div>
                 <div className="videosubHeaderBox">
+                
                     <div className="usernameHeader"> 
-                        <div className="usernameDateUploaded">
-                            <button className="uploadersProfile">{this.props.user.username.slice(0, 1)}</button>
-                            <div>
-                            {this.props.user.username}
-                            </div>
-                            <div className="dateuploaded">
-                                Published on {this.dateUploaded()}
+                        <div className="usernameHeaderLeft">
+                                <div>
+                                    <button className="uploadersProfile">{this.props.user.username.slice(0, 1)}</button>
+                                </div>
+                            <div className="usernameDateUploaded">
+                                <div className="username">
+                                    {this.props.user.username}
+                                </div>
+                                <div className="dateuploaded">
+                                    Published on {this.dateUploaded()}
+                                </div>
                             </div>
                         </div>
                         <div className="editVideoButtononPage">
@@ -77,9 +83,28 @@ class VideoShow extends React.Component {
                         {this.props.video.description || "no description"}
                     </div>
                 </div>
+                </div>
+                    <div className="nextVideos">
+                    {this.props.videos.slice(0,6).map(video => {
+                        if (video.id === this.props.video.id) return null;
+                        return (
+                                <Link className="oneVideoshow" key={video.id} to={`/videos/${video.id}`}>
+                                    <div>
+                                        <img className="displayingThumbnailshow" src={video.thumbnail_url} />
+                                    </div>
+                                    <div className="videoTitleindexshow">
+                                        {video.title}
+                                    </div>
+                                    {video.username}
+                                </Link>
+                            
+
+                        );
+                    })}
+                </div>
+                </div>
                 
-                
-            </div>
+            
             // <ProtectedRoute exact path="/videos/:videoId/edit" component={VideoEditContainer} />
                 //this.props.comments
                 //more videos
