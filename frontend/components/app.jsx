@@ -10,27 +10,29 @@ import VideoUploadContainer from "./videos/video_upload_container";
 import VideoEditContainer from "./videos/video_edit_container";
 
 const App = () => (
-    <div>
-        <div className="header"> 
-            <div className="logo">
-                <Link to="/">
-                    <img src={window.images.logo} className="youtubelogo"/>
-                    <h1 className="yourtube">YourTube</h1>
-                </Link>
-            </div>
-                <Link to="/upload">
-                <i className="cameraLogo fas fa-video"></i>
-                </Link>
-            <GreetingContainer />
-            
-        </div>
-        <Route exact path="/" component={VideoIndexContainer}/>
-        <Route path="/videos/:videoId" component={VideoShowContainer}/>
-        <ProtectedRoute exact path="/upload" component={VideoUploadContainer}/>
-        <ProtectedRoute exact path="/edit" component ={VideoEditContainer}/>
-        <AuthRoute exact path="/login" component={LogInFormContainer} />
-        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+  <div>
+    <div className="header">
+      <div className="logo">
+        <Link to="/">
+          <img src={window.images.logo} className="youtubelogo" />
+          <h1 className="yourtube">YourTube</h1>
+        </Link>
+      </div>
+      <Link to="/upload">
+        <i className="cameraLogo fas fa-video" />
+      </Link>
+      <GreetingContainer />
     </div>
+    <Route exact path="/" component={VideoIndexContainer} />
+    <Route exact path="/videos/:videoId" component={VideoShowContainer} />
+    <ProtectedRoute
+      exact path="/videos/:videoId/edit"
+      component={VideoEditContainer}
+    />
+    <ProtectedRoute exact path="/upload" component={VideoUploadContainer} />
+    <AuthRoute exact path="/login" component={LogInFormContainer} />
+    <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+  </div>
 );
 
 export default App;

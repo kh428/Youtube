@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import VideoEdit from './video_edit';
+import VideoUpload from "./video_upload";
 import { fetchVideo, updateVideo, deleteVideo } from '../../actions/video_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,4 +19,7 @@ const mapDispatchToProps = dispatch => {
     });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoEdit);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VideoUpload);

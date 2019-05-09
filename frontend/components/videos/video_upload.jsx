@@ -48,8 +48,9 @@ class VideoUpload extends React.Component {
         }
     }
 
-
     render() {
+        console.log("hello!")
+
         return (
             <div className="uploadBackground">
                 <form onSubmit={this.handleSubmit} className="upLoadPage">

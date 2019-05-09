@@ -12,18 +12,8 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.clearVideos();
         this.props.fetchVideos();
-        // this.props.fetchVideos();
     }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-    //         this.props.clearVideos();
-    //         this.props.fetchVideo(this.props.match.params.videoId);
-    //         this.props.fetchVideos();
-    //     }
-    // }
 
     dateUploaded() {
         let date = new Date(this.props.video.created_at);
@@ -32,7 +22,8 @@ class VideoShow extends React.Component {
     }
 
     handleEditLink() {
-        this.props.history.push(`/videos/${this.props.match.params.videoId}/edit`);
+        const videoId = this.props.match.params.videoId;
+        this.props.history.push(`/videos/${videoId}/edit`);
     }
 
     handleSubscribe () {  
@@ -115,15 +106,8 @@ class VideoShow extends React.Component {
               })}
             </div>
           </div>
-
-          // <ProtectedRoute exact path="/videos/:videoId/edit" component={VideoEditContainer} />
-          //this.props.comments
-          //more videos
-          //this.props.views
-          //this.porps.likes
         );
         }
-
-        }
+     }
 
     export default VideoShow;

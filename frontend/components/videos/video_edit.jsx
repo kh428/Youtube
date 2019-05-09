@@ -7,8 +7,8 @@ class VideoEdit extends React.Component {
         super(props);
 
         this.state = {
-            title: this.props.video.title,
-            description: this.props.video.description
+            // title: this.props.video.title,
+            // description: this.props.video.description
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,9 +66,24 @@ class VideoEdit extends React.Component {
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
-            <div>Edit Video</div>
+            <div className="uploadBackground">
+                <form onSubmit={this.handleSubmit} className="upLoadPage">
+                    <label>
+                        <input className="videoUploadButton" type="file" onChange={this.handleFile}/>
+                    </label>
+                    <input className="titleInput" type="text" value={this.state.title} onChange={this.handleInput("title")} placeholder="Title"/>
+                    <textarea className="descriptionInput" type="text" value={this.state.description} onChange={this.handleInput("description")} placeholder="Description" />
+                
+                <label className="thumbnailText">
+                    Thumbnail
+                    <input type="file" onChange={this.handleThumbnail} />
+                </label>
+                    <div className="typeOfThumbnail">
+                        TIFF, JPEG, GIF, PNG
+                    </div>
+                <input className="publishButton" type="submit" value="Publish"/>
             </form>
+                </div>
         )
     }
 }

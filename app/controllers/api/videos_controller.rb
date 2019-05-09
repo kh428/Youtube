@@ -30,7 +30,6 @@ class Api::VideosController < ApplicationController
 
         if @video.update_attributes(video_params)
             render :show
-            # render 'api/videos/show.json.jbuilder'
         else
             render json: @video.errors.full_messages, status: 422
         end
