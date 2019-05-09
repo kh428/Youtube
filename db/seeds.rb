@@ -40,5 +40,5 @@ video3.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphae
 video3.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-08+at+11.16.01+AM.png'), filename: 'luffydinner.png')
 video4.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/mp4'), filename: 'castiron.mp4')
 video4.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-08+at+11.54.35+PM.png'), filename: 'castiron.jpg')
-video4.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/1000.mp4'), filename: '10k.mp4')
-video4.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-09+at+12.03.18+AM.png'), filename: '10k.jpg')
+video5.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/1000.mp4'), filename: '10k.mp4')
+video5.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-09+at+12.03.18+AM.png'), filename: '10k.jpg')
