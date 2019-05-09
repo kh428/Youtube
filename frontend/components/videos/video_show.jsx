@@ -55,13 +55,11 @@ class VideoShow extends React.Component {
               </div>
               <div className="videosubHeaderBox">
                 <div className="usernameHeader">
-                  <div className="usernameHeaderLeft">
-                    <div>
+                  
                       <button className="uploadersProfile">
                         {this.props.user.username.slice(0, 1)}
                       </button>
-                    </div>
-                  </div>
+                  
                   <div className="userDescContainer">
                     <div className="usernameDateUploaded">
                       <div className="username">
@@ -83,7 +81,7 @@ class VideoShow extends React.Component {
               </div>
             </div>
             <div className="nextVideos">
-              <div className="nextVideos">Next Videos</div>
+              <div className="nextVideostext">Next Videos</div>
               {this.props.videos.slice(0, 6).map(video => {
                 if (video.id === this.props.video.id) return null;
                 return (

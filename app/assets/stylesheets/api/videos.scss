@@ -148,9 +148,10 @@
 }
 
 .videoTitleshow {
-    font-size: 25px;
+    font-size: 18px;
     padding-top: 25px;
     padding-bottom: 25px;
+    font-weight: 400;
 }
 .usernameHeader {
     display: flex;
@@ -159,36 +160,34 @@
 
 .username{
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 14px;
     padding-bottom: 5px;
 }
 .usernameDateUploaded {
     padding-bottom: 20px;
 }
 button.editvideobutton {
-  background-color:rgb(62, 62, 253);
-  border: none;
-  color: white;
-  padding: 14px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 22px;
-  border-radius: 4px;
-  justify-self: flex-end;
+    background-color: #3e3efd;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    justify-self: flex-end;
+    height: 36px;
+    width: 110px;
 }
 
-.usernameHeaderLeft{
-
-}
 
 .dateuploaded {
     color: rgba(17, 17, 17, 0.6);
-    font-size: 1.2rem;
+    font-size: 13px;
 }
 
 .description {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .videosubHeaderBox {
@@ -198,8 +197,8 @@ button.editvideobutton {
 }
 
 .uploadersProfile {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
     background-color: #aa47bc;
     color: white;
     outline: none;
@@ -210,10 +209,10 @@ button.editvideobutton {
     margin-right: 20px;
 }
 
-.nextVideos {
+.nextVideostext {
     display: flex;
     flex-direction: column;
-    width:200px
+    width:200px;
 }
 
 .oneVideoshow {
@@ -223,14 +222,16 @@ button.editvideobutton {
 }
 
 .displayingThumbnailshow {
-    width: 240px;
-    height: 140px;
+    width: 168px;
+    height: 94px;
     object-fit: fill;
+    margin-right: 5px;
 }
 
 .LeftSectionofShow {
-    margin: 0 40px;
-    max-width: 55%;
+    margin: 0 0 0 40px;
+    max-width: 60%;
+    padding: 24px 24px 0 0;
 }
 
 .userDescContainer {
@@ -238,9 +239,11 @@ button.editvideobutton {
 }
 
 .nextVideos {
-    font-size: 23px;
+    font-size: 16px;
     padding-bottom: 10px;
     // font-weight: bold;
+    font-family: Roboto;
+    padding: 24px 24px 0 0;
 }
 
 .titleUsernameInfoShow {
@@ -254,17 +257,19 @@ button.editvideobutton {
 .videoTitleindexshow {
     width: 300px;
     overflow-wrap: break-word;
-    font-size: 22px;
+    font-size: 14px;
+    margin: 0px 0px 4px;
+    font-weight: 600;
 }
 
 .videoUsernameShow {
-    font-size: 20px;
+    font-size: 13px;
     color: grey;
     padding-top: 6px;
 }
 
 .recommended {
     color: grey;
-    font-size: 16px;
+    font-size: 13px;
     padding-top: 6px;
 }
