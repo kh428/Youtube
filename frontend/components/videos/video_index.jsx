@@ -18,25 +18,33 @@ class VideoIndex extends React.Component {
             return (
                 <div className="indexBackground">
                         <div className="label">
-                            <h1>Recommended</h1>
+                            Recommended
                         </div>
                     <div className="allVideos">
 
                     {this.props.videos.map(video => {
                         return (
-                        <div className="oneVideo">
-                            <Link to={`/videos/${video.id}`}>
-                                <div>
-                                    <img className="displayingThumbnail" src={video.thumbnail_url}/>
-                                </div>
-                                <div className="videoTitleindex">
-                                    {video.title}
-                                </div>
+                          <div className="oneVideo">
+                            <Link
+                              to={`/videos/${video.id}`}
+                            >
+                              
+                                <img
+                                  className="displayingThumbnail"
+                                  src={
+                                    video.thumbnail_url
+                                  }
+                                />
+                              
+                              <div className="videoTitleindex">
+                                {video.title}
+                              </div>
+                              <div className="usernameindex">
                                 {video.username}
+                              </div>
                             </Link>
-                        </div>
-                        
-                    );
+                          </div>
+                        );
                     })}
                     </div>
                 </div>

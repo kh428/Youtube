@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     return ({
         currentUserId: state.session.currentUser,
         video: state.entities.videos[ownProps.match.params.videoId],
-        errors: state.errors.videos
+        errors: state.errors.videos,
+        formtype: "edit"
     });
 };
 

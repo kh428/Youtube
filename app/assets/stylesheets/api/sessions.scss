@@ -6,45 +6,90 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 .header {
+    z-index: 100;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0px 16px;
+    padding-left: 80px;
+    align-items: center;
+    height: 56px;
+    // box-shadow: 0px 10px rgba(161, 161, 161, 0.507);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 4px 12px 0 rgba(0, 0, 0, 0.12);
     // font-size: 10px;
     // -webkit-box-shadow: 0 8px 6px -6px black;
 	// -moz-box-shadow: 0 8px 6px -6px black;
     // box-shadow: 0 8px 6px -6px black;
 }
 
+.searchWhole {
+    display: flex;
+    align-items: center;
+    
+}
+
+.searchBox {
+    border: 1px solid rgba(155, 155, 155, 0.644);
+    width: 540px;
+    height: 28px;
+    font-size: 16px;
+    padding: 0px 10px;
+    border-radius:  2px 0 0 2px ;
+    
+}
+
+.searchButton {
+    align-items: center;
+}
+
+.searchicon {
+       opacity: 0.6;
+    border-radius: 0 2px 2px 0;
+    width: 50px;
+    text-align: center;
+    border: 1px solid rgba(155, 155, 155, 0.644);
+    padding: 6px 7px 11px;
+    height: 11px;
+    font-size: 16px;
+    background-color: rgba(218, 218, 218, 0.4);
+    font-weight: lighter;
+}
+
+.endofHeader {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
-    height: 20px;
-    width: 100%;
+    height: 24px;
+    width: fit-content;
     text-decoration-color: black;
     text-decoration: none;
-    -webkit-text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
+
 
 
 .yourtube {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: bold;
     font-family: Roboto;
+    width: fit-content;
+    letter-spacing: -1px;
+    display: flex
 }
 
 .header img {
     object-fit: cover;
-    height: 30px;
+    height: 20px;
     float: left;
+    display: flex;
 }
 
-h1 {
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    font-size: 21px;
-    font-family: Roboto;
-    letter-spacing: -1px;
-}
 
 .login-form-container {
     display: flex;
@@ -116,18 +161,11 @@ h1 {
     margin: 15px;
 }
 
-.header-group {
-    display: flex;
-    flex-direction: column;
-}
-
 .header-name {
     background-color: #aa47bc;
     width: 43px;
     height: 43px;
     border-radius: 50%;
-    padding: 6px;
-    margin: 8px;
     margin-top: 0px;
     color: white;
     outline: none;
@@ -162,8 +200,6 @@ h1 {
     display: absolute;
     position: absolute;
     background-color: #f9f9f9;
-    margin-top: 50px;
-    margin-right: 50px;
     right: 0;
     box-shadow: 5px 5px 7px rgba(88, 88, 88, 0.219);
 

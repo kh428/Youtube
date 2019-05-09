@@ -14,19 +14,34 @@ const App = () => (
     <div className="header">
       <div className="logo">
         <Link to="/">
-          <img src={window.images.logo} className="youtubelogo" />
-          <h1 className="yourtube">YourTube</h1>
+          
+            <img src={window.images.logo} className="youtubelogo" />
+          
+          
+            <div className="yourtube">YourTube</div>
+          
         </Link>
       </div>
-      <Link to="/upload">
-        <i className="cameraLogo fas fa-video" />
-      </Link>
-      <GreetingContainer />
+      <div className="searchWhole">
+        <div className="searchbox-container">
+          <input className="searchBox" type="text" placeholder="Search" />
+        </div>
+        <div className="searchbutton">
+          <i className="searchicon fas fa-search" />
+        </div>
+      </div>
+      <div className="endofHeader">
+        <Link to="/upload">
+          <i className="cameraLogo fas fa-video" />
+        </Link>
+        <GreetingContainer />
+      </div>
     </div>
     <Route exact path="/" component={VideoIndexContainer} />
     <Route exact path="/videos/:videoId" component={VideoShowContainer} />
     <ProtectedRoute
-      exact path="/videos/:videoId/edit"
+      exact
+      path="/videos/:videoId/edit"
       component={VideoEditContainer}
     />
     <ProtectedRoute exact path="/upload" component={VideoUploadContainer} />

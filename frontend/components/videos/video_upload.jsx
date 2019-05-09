@@ -110,9 +110,11 @@ class VideoUpload extends React.Component {
         return (
             <div className="uploadBackground">
                 <form onSubmit={this.handleSubmit} className="upLoadPage">
-                    <label>
-                        <input className="videoUploadButton" type="file" onChange={this.handleFile}/>
-                    </label>
+                    {this.props.formtype === "edit" ? null : (
+                        <label>
+                            <input className="videoUploadButton" type="file" onChange={this.handleFile}/>
+                        </label>
+                    )}
                     <input className="titleInput" type="text" value={this.state.title} onChange={this.handleInput("title")} placeholder="Title"/>
                     <textarea className="descriptionInput" type="text" value={this.state.description} onChange={this.handleInput("description")} placeholder="Description" />
                 
