@@ -25,7 +25,7 @@ video1 = Video.create({title: "What is a Maillard Reaction?", description: "The 
 video2 = Video.create({title: "Heard of Seasoning in layers?", description: "Seasoning in layers is important when cooking. I will explain to you how.", channel_id: channel3.id})
 video3 = Video.create({title: "[ASMR] Luffy Dinner", description: "Luffy is a four year old Bernese Mountain Dog Mix", channel_id: channel4.id})
 video4 = Video.create({title: "Make Your Food Taste Better with a Cast Iron Pan", description: "Castiron pan is the ultimate cooking pan when searing a steak", channel_id: channel2.id})
-# video5 = Video.create({title: "Why I use a 300 dollar pan", description: "Copper vs Castiron vs nonstick", channel_id: channel2.id})
+video5 = Video.create({title: "10k Subscribers Thank You", description: "Thank you for subscribing to my channel", channel_id: channel2.id})
 # video6 = Video.create({title: "Why I use a 300 dollar pan", description: "Copper vs Castiron vs nonstick", channel_id: channel2.id})
 # video7 = Video.create({title: "Why I use a 300 dollar pan", description: "Copper vs Castiron vs nonstick", channel_id: channel2.id})
 
@@ -40,5 +40,5 @@ video3.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphae
 video3.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-08+at+11.16.01+AM.png'), filename: 'luffydinner.png')
 video4.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/mp4'), filename: 'castiron.mp4')
 video4.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-08+at+11.54.35+PM.png'), filename: 'castiron.jpg')
-
-
+video4.video.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/1000.mp4'), filename: '10k.mp4')
+video4.thumbnail.attach(io: open('https://s3-us-west-1.amazonaws.com/yourtube-raphael-prod/Screen+Shot+2019-05-09+at+12.03.18+AM.png'), filename: '10k.jpg')
