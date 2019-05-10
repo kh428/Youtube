@@ -108,26 +108,82 @@ class VideoUpload extends React.Component {
 
     render() {
         return (
-            <div className="uploadBackground">
-                <form onSubmit={this.handleSubmit} className="upLoadPage">
-                    {this.props.formtype === "edit" ? null : (
-                        <label>
-                            <input className="videoUploadButton" type="file" onChange={this.handleFile}/>
-                        </label>
-                    )}
-                    <input className="titleInput" type="text" value={this.state.title} onChange={this.handleInput("title")} placeholder="Title"/>
-                    <textarea className="descriptionInput" type="text" value={this.state.description} onChange={this.handleInput("description")} placeholder="Description" />
-                
-                <label className="thumbnailText">
-                    Thumbnail
-                    <input type="file" onChange={this.handleThumbnail} />
-                </label>
-                    <div className="typeOfThumbnail">
-                        TIFF, JPEG, GIF, PNG
-                    </div>
-                <input className="publishButton" type="submit" value="Publish"/>
-            </form>
+          <form onSubmit={this.handleSubmit} className="upLoadPage">
+            <div className="publishbuttoncontainer">
+              {this.props.formtype === "edit" ? (
+                <input
+                  className="publishButton"
+                  type="submit"
+                  value="SAVE"
+                />
+              ) : (
+                <input
+                  className="publishButton"
+                  type="submit"
+                  value="Publish"
+                />
+              )}
+            </div>
+            <div className="underpublish">
+              <div className="thumbnailbox">
+                {this.props.formtype === "edit" ? (
+                  this.props.video ? (
+                    <img
+                      className="displayingThumbnailupdate"
+                      src={this.props.video.thumbnail_url}
+                    />
+                  ) : null
+                ) : (
+                  <label>
+                    <input
+                      className="videoUploadButton"
+                      type="file"
+                      onChange={this.handleFile}
+                    />
+                  </label>
+                )}
+              </div>
+              <div>
+                <div>
+                  <div className="titleInputBox">
+                    <textarea
+                      className="titleInput"
+                      type="text"
+                      value={this.state.title}
+                      onChange={this.handleInput("title")}
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div className="descriptionBox">
+                    <textarea
+                      className="descriptionInput"
+                      type="text"
+                      value={this.state.description}
+                      onChange={this.handleInput("description")}
+                      placeholder="Description"
+                    />
+                  </div>
                 </div>
+                <div className="thumbnailcontainer">
+                  <label className="thumbnailText">
+                    Thumbnail (TIFF, JPEG, GIF, PNG)
+                  </label>
+                  <br />
+                  <input type="file" onChange={this.handleThumbnail} />
+                </div>
+              </div>
+              {/* {this.props.formtype === "edit"} */}
+              <div className="videoinupdatecontainer">
+                {this.props.video ? (
+                  <video
+                    className="videoItSelfupdate"
+                    src={this.props.video.video_url}
+                    controls
+                  />
+                ) : null}
+              </div>
+            </div>
+          </form>
         );
     }
 }

@@ -9,38 +9,72 @@
     // flex-direction: column;
 }
 .upLoadPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     background-color: white;
-    width: 85%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 7px rgba(88, 88, 88, 0.219);
 }
 
 .cameraLogo {
     font-weight: 900;
-    font-size: 0.6cm;
+    font-size: 15px;
+    margin-right: 15px;
+    padding: 8px;
 }
 
+.titleInputBox {
+    width: 500px;
+    box-sizing: border-box;
+    height: 100px;
+    border: 1px solid rgba(194, 194, 194, 0.52);
+    border-radius: 4px;
+    margin: 30px;
+}
 
 .titleInput {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 100%;
+    height: 90px;
+    padding: 15px;
+    border: none;
     box-sizing: border-box;
+    resize: none;
+        font-size: 15px;
+    
+}
+
+.descriptionBox {
+    width: 500px;
+    box-sizing: border-box;
+    height: 375px;
+    border: 1px solid rgba(194, 194, 194, 0.52);
+    border-radius: 4px;
+    margin: 30px;
 }
 
 .descriptionInput {
-    width: 50%;
-    padding: 12px 20px;
-    height: 375px;
-    margin: 8px 0;
+    width: 100%;
+    height: 350px;
+    padding: 15px;
     box-sizing: border-box;
+    resize: none;
+    border: none;
+    font-size: 15px;
 }
 
 .publishButton {
+  background-color: rgb(74, 74, 255);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+    width: 88px;
+    height: 36px;
+  font-size: 16px;
+  border-radius: 4px;
+//   padding-right: 30px;
+}
+
+.videoUploadButton {
   background-color: rgb(74, 74, 255);
   border: none;
   color: white;
@@ -50,39 +84,12 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 4px;
-}
-
-.cameraLogo {
-    margin-right: 15px;
-    padding: 8px;
-    font-weight: 900;
-    font-size: 0.6cm;
-}
-
-.videoUploadButton {
-    background-color: rgb(74, 74, 255);
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 4px;
+  width: 200px;
 }
 
 .typeOfThumbnail {
     display: flex;
     justify-content: space-between;
-}
-
-.uploadBackground {
-    background-color: rgb(219, 219, 219);
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    
 }
 
 .thumbnailText {
@@ -99,7 +106,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-left: 120px;
     font-weight: bold;
     font-family: Roboto;
@@ -231,7 +238,7 @@ button.editvideobutton {
 .LeftSectionofShow {
     margin: 0 0 0 40px;
     max-width: 60%;
-    padding: 24px 24px 0 0;
+    padding: 24px 24px 0 50px;
 }
 
 .userDescContainer {
@@ -271,5 +278,53 @@ button.editvideobutton {
 .recommended {
     color: grey;
     font-size: 13px;
-    padding-top: 6px;
+    padding-top: 15px;
+}
+
+.publishbuttoncontainer {
+    border-bottom: 1px solid rgba(160, 160, 160, 0.479);
+        display: flex;
+    justify-content: flex-end;
+    padding: 10px 40px 10px 10px;
+    margin: 10px;
+}
+
+.thumbnailcontainer {
+    padding: 0px 30px;
+}
+
+.thumbnailText {
+    font-size: 12px;
+    margin: 12px 0px;
+}
+
+.underpublish {
+    display: flex;
+}
+
+.thumbnailboxinupdate {
+    border: 1px solid rgba(194, 194, 194, 0.52);
+    width: 255px;
+    height: 800px;
+    position: relative;
+    top: -77px;
+}
+
+.displayingThumbnailupdate {
+    width: 255px;
+    height: 145px;
+    border-radius: 3px;
+}
+
+.videoItSelfupdate {
+    width: 342px;
+    height: 198px;
+    border-radius: 5px 5px 0 0;
+}
+
+.videoinupdatecontainer {
+    width: 342px;
+    height: 300px;
+    border: 1px solid rgba(194, 194, 194, 0.52);
+    border-radius: 5px;
 }
