@@ -82,7 +82,7 @@ class VideoShow extends React.Component {
             </div>
             <div className="nextVideos">
               <div className="nextVideostext">Next Videos</div>
-              {this.props.videos.slice(0, 6).map(video => {
+              {this.props.videos.slice(0, 10).map(video => {
                 if (video.id === this.props.video.id) return null;
                 return (
                   <Link
