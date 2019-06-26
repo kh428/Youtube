@@ -23,6 +23,7 @@ const App = () => (
 
 export default App;
 
+// reformatting
 // const App = () => (
 //   <div>
 //     <div className="header">
