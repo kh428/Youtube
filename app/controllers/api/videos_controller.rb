@@ -1,6 +1,10 @@
 class Api::VideosController < ApplicationController
     def index
-        @videos = Video.all
+        if params[:search]
+            search
+        else 
+            @videos = Video.all
+        end
     end
 
     def show
@@ -41,6 +45,12 @@ class Api::VideosController < ApplicationController
         render json: video
     end
 
+    def search
+        query_words = params[:search].split("+").map(&:downcase).join(" ")
+        query = "%#{query_words}%"
+        @videos = Video.where("title ILIKE ?", query)
+    end
+    
     private 
     def video_params
         params.require(:video).permit(:title, :description, :video, :thumbnail)
