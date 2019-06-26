@@ -5,7 +5,7 @@ class SearchResults extends React.Component {
 
     componentDidMount() {
         this.props.clearVideos();
-        this.props.fetchVideos({ search: this.props.search });
+        this.props.fetchVideos({search: this.props.search});
     }
     componentDidUpdate(prevProps) {
         if (prevProps.location.search !== this.props.location.search) {
@@ -21,7 +21,7 @@ class SearchResults extends React.Component {
             searchResultItems = this.props.videos.map((video, idx) => {
                 let user = this.props.users[video.uploaderId];
                 return (
-                    <SearchItem key={idx} video={video} user={user} />
+                    <SearchItem key={idx} video={video} user={user}/>
                 )
             });
             message = `Search results for "${searchTerm}"`;

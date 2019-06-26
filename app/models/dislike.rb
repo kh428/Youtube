@@ -1,2 +1,0 @@
-class Dislike < ApplicationRecord
-end

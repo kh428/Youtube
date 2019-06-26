@@ -1,0 +1,251 @@
+$body-reg-theme: #f9f9f9;
+
+.comments-header {
+    margin-top: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-amount {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-pic-author {
+  background-color: #aa47bc;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+  color: white;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 0;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.user-pic-author-replying {
+    background-color: #aa47bc;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 16px;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 0;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.comment-box {
+    width: 100%;
+}
+
+.comment-box-buttons {
+    display: flex;
+}
+
+.comment-box-container {
+    display: flex;
+}
+
+.comment-input-box {
+    padding-bottom: 8px;
+}
+
+.comment-textarea {
+    outline: none;
+    resize: none;
+    border: none;
+    font-size: 14px;
+    color: rgba(17, 17, 17, 0.6);
+    width: 100%;
+    margin-bottom: 4.2px;
+    height: 21px;
+    background-color: $body-reg-theme;
+}
+
+.comment-input-underline-container {
+    // display: flex; 
+    // align-content: center;
+}
+
+.comment-input-underline {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.comment-btn, .comment-btn-off, .cancel-btn, .reply-btn {
+    height: 36px;
+    padding: 10px 16px;
+    letter-spacing: 0.007px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    background-color: $body-reg-theme;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Roboto', Arial, sans-serif;
+    align-items: center;
+    cursor: pointer;
+    font-stretch: 100%;
+}
+
+.comment-btn {
+    background-color: rgb(6, 95, 212);
+    margin-left: 8px;
+    width: 101.53px;
+}
+
+.comment-btn:hover {
+    color: rgb(96, 96, 96);
+}
+
+.comment-btn-off {
+    background-color: rgb(204,204,204);
+    margin-left: 8px;
+    width: 101.53px;
+    cursor: default; 
+}
+
+.cancel-btn {
+    color: rgb(96, 96, 96);
+    width: 85.08px;
+}
+
+.cancel-btn:active {
+    background-color: rgba(136, 136, 136, 0.2);
+}
+
+.reply-btn {
+    color: rgb(96, 96, 96);
+    width: 69px;
+    height: 31px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.reply-btn:active {
+    background-color: rgba(136, 136, 136, 0.2);
+}
+
+.comment-btn-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+
+
+
+
+.comment-container {
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.comment-right {
+    width: 100%
+}
+
+.main-comment {
+    .comment-info {
+        margin-bottom: 2px;
+        height: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        flex-shrink: 0;
+        display: flex;
+        width: 100%;
+        .comment-author {
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+        .comment-date {
+            font-size: 13px;
+            color: rgb(96,96,96);
+            flex-shrink: 0;
+        }
+    }
+    .comment-body {
+        font-size: 14px;
+        white-space: pre-line;
+    }
+    .comment-action {
+        margin-top: 4px;
+        height: 32px;
+        display: flex;
+    }
+}
+
+.comment-action-menu {
+    width: 40px;
+}
+
+.reply-dropdown {
+    height: 24px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    #comment-drop-icon {
+        margin-left: 4px;
+    }
+}
+
+.comment-like {
+    padding: auto;
+    width: 32px;
+    height: 32px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    // color: rgb(96, 96, 96);
+    color: rgb(144, 144, 144);
+    background-color: $body-reg-theme;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.left {
+    margin-left: -8px;
+}
+
+.comment-like:hover {
+    color: rgb(96,96,96);
+}
+
+.action-icon {
+    color: rgb(144, 144, 144);
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    visibility: hidden;
+}
+
+.comment-container:hover {
+    .action-icon {
+        visibility: visible;
+    }
+}
+
+.replies-container {
+    margin-left: 56px;
+}
+
+  
+    

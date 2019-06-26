@@ -30,12 +30,12 @@ class Search extends React.Component {
         return (
             <div className="search-bar-container">
                 <form className="search-form" onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Search"
+                    <input 
+                        type="text" 
+                        placeholder="Search" 
                         className="search-input"
                         value={this.state.query}
-                        onChange={this.update()}
+                        onChange={this.update()} 
                     />
                     <button className="search-btn">
                         <i id="search-icon" className="fas fa-search"></i>

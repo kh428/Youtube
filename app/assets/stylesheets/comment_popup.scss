@@ -1,0 +1,23 @@
+.comment-popup-container {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    position: absolute;
+    transform: translate(-35px, 20px);
+}
+
+.comment-popup {
+    padding: 8px 0;
+    .comment-popup-item {
+        height: 48px;
+        padding: 0 16px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        color: rgb(10, 10, 10);
+        cursor: pointer;
+    }
+    .comment-popup-item:hover {
+        background-color: lightgray;
+    }
+}
+

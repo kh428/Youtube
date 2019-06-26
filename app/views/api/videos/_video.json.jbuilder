@@ -1,6 +1,5 @@
-
-json.extract! video, :id, :title, :description, :channel_id, :created_at
-json.video_url url_for(video.video)
-json.user_id video.user.id
-json.thumbnail_url url_for(video.thumbnail)
-json.username video.user.username
+json.extract! video, :id, :title, :description
+json.uploaderId video.uploader_id
+json.createdAt video.created_at
+json.videoUrl url_for(video.videoUrl)
+json.thumbnailUrl url_for(video.thumbnailUrl)

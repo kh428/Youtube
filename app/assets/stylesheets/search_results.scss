@@ -1,0 +1,117 @@
+.search-results-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.search-results-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1280px;
+    width: 100%;
+    flex: 1;
+    padding: 16px 24px;
+}
+
+.search-results-header {
+    height: 36px;
+    max-width: 1280px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+    h3 {
+        font-size: 14px;
+        color: #606060;
+    }
+}
+
+.search-results {
+    max-width: 1280px;
+}
+
+.search-item-container {
+    // width: 246px;
+    // height: 238px;
+    margin-top: 16px;
+    text-decoration: none;
+    display: flex;
+}
+
+.search-item-container:hover {
+    .search-item-overlay {
+        opacity: 0.8;
+    }
+}
+
+.search-thumbnail-container {
+    width: 246px;
+    height: 138px;
+    margin-right: 16px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-thumbnail {
+    max-width: 246px;
+    max-height: 138px;
+    position: relative;
+    background-color: black;
+    z-index: 1;
+}
+
+.search-thumbnail-background {
+    position: absolute;
+    background-color: black;
+    width: 246px;
+    height: 138px;
+}
+
+.search-item-overlay {
+    opacity: 0;
+    width: 210px;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    transition: opacity .3s ease-in;
+}
+
+
+.search-item-details {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 13px;
+    max-width: 600px;
+    padding-right: 24px;
+    height: 138px;
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 8px;
+        margin-bottom: 2px;
+        color: black;
+    }
+    .meta-data {
+        display: flex;
+    }
+    .upload-name {
+        color: rgb(96, 96, 96);
+    }
+    .upload-time {
+        color: rgb(96, 96, 96);
+        font-size: 13px;
+    }
+    .upload-description {
+        margin-bottom: 8px;
+        padding-top: 8px;
+        max-height: 40px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        color: rgb(96, 96, 96);
+    }
+}

@@ -1,191 +1,109 @@
 import React from 'react';
+import LoadingSpinner from '../misc/loading_spinner';
 
 class VideoUpload extends React.Component {
+
     constructor(props) {
         super(props);
-
         this.state = {
             title: '',
             description: '',
-            file: null,
-            thumbnail: null
+            videoFile: null,
+            thumbnailFile: null,
+            firstForm: true,
+            loading: false
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleFile = this.handleFile.bind(this);
-        this.handleThumbnail = this.handleThumbnail.bind(this);
-    }
-
-    componentDidMount() {
-        if (this.props.match && this.props.match.params.videoId) {
-            this.props.fetchVideo(this.props.match.params.videoId);
-        }        
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        const isVideoLoaded =
-          this.props.video &&
-          this.props.video.title !== prevState.title;
-
-        if (isVideoLoaded) {
-            const { video: {
-                title, description, thumbnail
-            } } = this.props;
-
-            this.setState({
-              title,
-              description,
-              thumbnail
-            });
-        }
+        this.toggleForm = this.toggleForm.bind(this);
+        // this.handleFile = this.handleFile.bind(this);
     }
 
     handleInput(field) {
         return (e) => {
-            this.setState({ [field]: e.target.value });
+            this.setState({[field]: e.target.value});
         };
     }
 
-    handleFile(e) {
-        this.setState({file: e.currentTarget.files[0]});
+    handleFile(field) {
+        return (e) => {
+            this.setState({[field]: e.currentTarget.files[0]});
+            if (field === "videoFile") {
+                this.toggleForm();
+            } 
+        };
     }
 
-    handleThumbnail(e) {
-        this.setState({ thumbnail: e.currentTarget.files[0] });
+    toggleForm(e) {
+        this.setState({firstForm: !this.state.firstForm});
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
         const formData = new FormData();
-        const { title, description, file, thumbnail } = this.state;
-        const {
-          params: { videoId }
-        } = this.props.match;
-        const isEditing = this.props.location.pathname.includes("edit");
-
-        if (isEditing) {
-            // NOTE: we dont allow editing video itself
-            formData.append("video[id]", videoId);
-            formData.append("video[title]", title);
-            formData.append("video[description]", description);
-            formData.append("video[thumbnail]", thumbnail);
-
-            const params = {
-                id: videoId,
-                video: {
-                    title,
-                    description,
-                    thumbnail,
-                }
-            }
-
-            this.props
-              .updateVideo(params)
-              .then(video =>
-                this.props.history.push(`/videos/${videoId}`)
-              );
-        } else {
-            formData.append("video[title]", title);
-            formData.append("video[description]", description);
-            formData.append("video[thumbnail]", thumbnail);
-            formData.append("video[video]", file);
-            this.props
-                .createVideo(formData)
-                .then(video =>
-                this.props.history.push("/")
-                );
+        formData.append('video[title]', this.state.title);
+        formData.append('video[description]', this.state.description);
+        formData.append('video[uploader_id]', this.props.currentUserId);
+        if (this.state.videoFile) {
+            formData.append('video[videoUrl]', this.state.videoFile);
         }
+        if (this.state.thumbnailFile) {
+            formData.append('video[thumbnailUrl]', this.state.thumbnailFile);
+        }
+        this.setState({loading: true});
+        this.props.uploadVideo(formData).then(video => {
+            this.setState({loading: false});
+            this.props.history.push('/');
+        });
     }
 
     renderErrors() {
         if (this.props.errors.length > 0) {
             return (
-                this.props.errors.map (error => error)
-            )
+                <ul className="error-upload-list">
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            <i className="fas fa-exclamation-circle"></i>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
         }
     }
 
     render() {
         return (
-          <form onSubmit={this.handleSubmit} className="upLoadPage">
-            <div className="publishbuttoncontainer">
-              {this.props.formtype === "edit" ? (
-                <input
-                  className="publishButton"
-                  type="submit"
-                  value="SAVE"
-                />
-              ) : (
-                <input
-                  className="publishButton"
-                  type="submit"
-                  value="Publish"
-                />
-              )}
-            </div>
-            <div className="underpublish">
-              <div className="thumbnailbox">
-                {this.props.formtype === "edit" ? (
-                  this.props.video ? (
-                    <img
-                      className="displayingThumbnailupdate"
-                      src={this.props.video.thumbnail_url}
-                    />
-                  ) : null
-                ) : (
-                  <label>
-                    <input
-                      className="videoUploadButton"
-                      type="file"
-                      onChange={this.handleFile}
-                    />
-                  </label>
-                )}
-              </div>
-              <div>
-                <div>
-                  <div className="titleInputBox">
-                    <textarea
-                      className="titleInput"
-                      type="text"
-                      value={this.state.title}
-                      onChange={this.handleInput("title")}
-                      placeholder="Title"
-                    />
-                  </div>
-                  <div className="descriptionBox">
-                    <textarea
-                      className="descriptionInput"
-                      type="text"
-                      value={this.state.description}
-                      onChange={this.handleInput("description")}
-                      placeholder="Description"
-                    />
-                  </div>
+            <div className="upload-page">
+                <div className="upload-container">
+                    <form onSubmit={this.handleSubmit} className="upload-prompt">
+                        {this.state.firstForm ? (
+                            <>
+                                <input className="upload-input" id="upload" type="file" accept="video/mp4,video/*" onChange={this.handleFile("videoFile")} />
+                                <label htmlFor="upload">
+                                    <i id="upload-icon" className="fas fa-arrow-circle-up"></i>
+                                </label>
+                                <div className="upload-text">Select files to upload</div>
+                            </>
+                        ) : (
+                            <>
+                                <div className="upload-text-two">Add video information</div>
+                                <input className="title-input" type="text" placeholder="Title" onChange={this.handleInput("title")} />
+                                <textarea className="description-input" placeholder="Description" onChange={this.handleInput("description")} />
+                                <input className="upload-input" id="thumbnail-upload" type="file" accept="image/*" onChange={this.handleFile("thumbnailFile")} />
+                                <label className="thumbnail-label" htmlFor="thumbnail-upload">Custom thumbnail</label>
+                                <div className="error-upload-container">
+                                    {this.renderErrors()}
+                                </div>
+                                <input className="publish-btn" type="submit" value="Publish" />
+                                {this.state.loading ? (<LoadingSpinner />) : (<></>)}
+                            </>
+                        )}       
+                    </form>
                 </div>
-                <div className="thumbnailcontainer">
-                  <label className="thumbnailText">
-                    Thumbnail (TIFF, JPEG, GIF, PNG)
-                  </label>
-                  <br />
-                  <input type="file" onChange={this.handleThumbnail} />
-                </div>
-              </div>
-              {/* {this.props.formtype === "edit"} */}
-              <div className="videoinupdatecontainer">
-                {this.props.video ? (
-                  <video
-                    className="videoItSelfupdate"
-                    src={this.props.video.video_url}
-                    controls
-                  />
-                ) : null}
-              </div>
             </div>
-          </form>
-        );
+        )
     }
+
 }
 
 export default VideoUpload;

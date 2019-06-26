@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { userInfo } from 'os';
+import VideoGrid from './video_grid';
 
 class VideoIndex extends React.Component {
     constructor(props) {
@@ -8,6 +7,7 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
+        this.props.clearVideos();
         this.props.fetchVideos();
     }
 
@@ -16,39 +16,15 @@ class VideoIndex extends React.Component {
             return null;
         } else {
             return (
-                <div className="indexBackground">
-                        <div className="label">
-                            Recommended
-                        </div>
-                    <div className="allVideos">
-
-                    {this.props.videos.map(video => {
-                        return (
-                          <div className="oneVideo">
-                            <Link
-                              to={`/videos/${video.id}`}
-                            >
-                              
-                                <img
-                                  className="displayingThumbnail"
-                                  src={
-                                    video.thumbnail_url
-                                  }
-                                />
-                              
-                              <div className="videoTitleindex">
-                                {video.title}
-                              </div>
-                              <div className="usernameindex">
-                                {video.username}
-                              </div>
-                            </Link>
-                          </div>
-                        );
-                    })}
+                <div className="index-container">
+                    <div className="video-index-container">
+                        <VideoGrid videos={this.props.videos.slice(0,6)} users={this.props.users} title={"Recommended"}/>
+                    </div>
+                    <div className="video-index-container">
+                        <VideoGrid videos={this.props.videos.slice(6,100)} users={this.props.users} title={"Here are the rest!"} />
                     </div>
                 </div>
-            );
+            )
         }
     }
 }

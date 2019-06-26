@@ -1,0 +1,218 @@
+.session-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.searchWhole {
+    display: flex;
+    align-items: center;
+    
+}
+
+.searchBox {
+    border: 1px solid rgba(155, 155, 155, 0.644);
+    width: 540px;
+    height: 28px;
+    font-size: 16px;
+    padding: 0px 10px;
+    border-radius:  2px 0 0 2px ;
+    
+}
+
+.searchButton {
+    align-items: center;
+}
+
+.searchicon {
+       opacity: 0.6;
+    border-radius: 0 2px 2px 0;
+    width: 50px;
+    text-align: center;
+    border: 1px solid rgba(155, 155, 155, 0.644);
+    padding: 6px 7px 11px;
+    height: 11px;
+    font-size: 16px;
+    background-color: rgba(218, 218, 218, 0.4);
+    font-weight: lighter;
+}
+
+.session-form {
+    display: block;
+    // margin: auto;
+    // position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    width: 368px;
+    min-height: 416px;
+    border: 1px solid #dadce0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 48px 40px 36px;
+    font-family: 'Google Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
+    letter-spacing: .1px;
+    line-height: 1.5;
+    overflow: hidden;
+ }
+
+ .session-form img {
+    padding: 0;
+    margin: 0;
+    height: 37px;
+    width: auto;
+ }
+
+ .session-form h1 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    padding-top: 4px;
+    margin: 0;
+    letter-spacing: .1px;
+    line-height: 1.3333333;
+ }
+
+ .session-form h2 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .1px;
+    padding-top: 8px;
+ }
+
+ .session-form a {
+     color: #1a73e8;
+     text-align: left;
+     font-size: 14px;
+     font-weight: bold;
+     /* font-weight should be 500, but won't work for a link */
+ }
+
+.demo-user {
+     color: #1a73e8;
+     text-align: left;
+     font-size: 14px;
+     font-weight: bold;
+     cursor: pointer;
+     width: 115px;
+     /* font-weight should be 500, but won't work for a link */
+ }
+
+.error-login {
+    border: 2px solid #d93025;
+    padding: 12px 14px;
+}
+
+.error-login:focus {
+    border: 2px solid #d93025;
+    padding: 12px 14px;
+}
+
+.error-list {
+    color: #d93025;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    list-style-type: none;
+    font: 400 12px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+.login {
+    height: 56px;
+}
+
+
+.session-form div {
+    display: flex;
+    // padding-bottom: 20px;
+}
+
+.demo {
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+} 
+
+
+.session-form-submit {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.next-button {
+    background: #1a73e8;
+    outline: none;
+    color: white;
+    width: 88px;
+    height: 36px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0px;
+    border: 0px;
+    box-shadow: none;
+    transition: box-shadow .28s cubic-bezier(0.4,0.0,0.2,1);
+}
+
+.next-button:hover {
+    background: #4285f4;
+    cursor: pointer;
+    box-shadow: 0 1.6px 3px 0.1px rgba(58, 148, 233, 0.4),0 1.6px 4px 0.1px rgba(58, 148, 233, 0.4)
+}
+
+.input-group {
+    position: relative;
+    margin: 8px 1px 20px 0;
+    .user-auth-input {
+        position: relative;
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        width: 368px;
+        box-sizing: border-box;
+        padding: 13px 15px;
+        font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        outline: none;
+    }
+    label {
+        position: absolute;
+        left: 8px;
+        bottom: 19px;
+        letter-spacing: normal;
+        color: #80868b;
+        transition: transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1);
+        transform-origin: bottom left;
+        width: auto;
+        z-index: 1;
+        padding: 0 8px;
+        background: #fff;
+        cursor: text;
+        font: 400 16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    }
+}
+
+.input-group.active label {
+    transform: scale(.75) translateY(-39px);
+    color: #1a73e8;
+}
+
+.input-group.active input {
+    border: 2px solid #1a73e8;
+    padding: 12px 14px;
+}
+
+.input-group.filled label {
+    transform: scale(.75) translateY(-39px);
+    color: #80868b;
+}
+
+.input-group.filled input {
+    border: 1px solid #dadce0;
+    padding: 13px 15px;
+}

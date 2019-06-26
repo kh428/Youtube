@@ -44,8 +44,8 @@ class SideBar extends React.Component {
                             </div> */}
                         </div>
                         <div className="side-bar-section">
-                            <div className="best-of-youtoob">
-                                <div>Yourtube Creator</div>
+                            <div className="best-of-yourtube">
+                                <div>BEST OF Yourtube</div>
                             </div>
                             <a href="https://github.com/kh428">
                                 <div className="side-bar-item">

@@ -1,12 +1,15 @@
-# json.videos @videos
 json.videos do
-    json.array! @videos do |video|
-        json.partial! 'video', video: video
+    @videos.each do |video|
+        json.set! video.id do
+            json.partial! 'video', video: video
+        end
     end
 end
 
 json.users do
-    json.array! @videos do |video|
-        json.partial! '/api/users/user', user: video.user
+    @videos.each do |video|
+        json.set! video.uploader_id do
+            json.extract! video.uploader, :id, :first_name, :last_name
+        end
     end
 end

@@ -1,0 +1,122 @@
+
+.title-input-edit {
+    height: 110px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    label {
+        color: rgba(0,0,0,.55);
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 0 16px;
+        height: 16px;
+    }
+    textarea {
+        resize: none;
+        outline: none; 
+        padding: calc(20px - 17px) 16px calc(8px - 7px);
+        border: none;
+        font-size: 15px;
+        order: 2;
+        height: 44px;
+    }
+    .char-count-container {
+        visibility: hidden;
+        text-align: right;
+        order: 3;
+    }
+    .char-count {
+        padding: calc(24px - 12px) 16px calc(12px - 4px);
+        height: 16px;
+        font-size: 12px;
+        color: rgba(0,0,0,.55);
+    }
+}
+
+.file-edit-input-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.description-input-edit {
+    resize: none;
+    height: 226px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    label {
+        color: rgba(0,0,0,.55);
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 0 16px;
+        height: 16px;
+    }
+    textarea {
+        resize: none;
+        outline: none; 
+        padding: calc(20px - 17px) 16px calc(8px - 7px);
+        border: none;
+        font-size: 15px;
+        height: 160px;
+        order: 2;
+    }
+    .char-count-container {
+        visibility: hidden;
+        text-align: right;
+        order: 3;
+    }
+    .char-count {
+        padding: calc(24px - 12px) 16px calc(12px - 4px);
+        height: 16px;
+        font-size: 12px;
+        // color: rgba(0,0,0,.87);
+        color: rgba(0,0,0,.55);
+    } 
+}
+
+.title-text:focus + label, .description-text:focus + label {
+    color: #065fd4;
+}
+
+.title-text:focus ~ .char-count-container, .description-text:focus ~ .char-count-container {
+    visibility: visible;
+    color: #065fd4;
+}
+
+.title-input-edit:focus-within, .description-input-edit:focus-within {
+        border-color: #065fd4;
+}
+
+.title-error-container {
+    height: 20px;
+    padding-top: 4px;
+}
+
+.edit-btn {
+    height: 37px;
+    width: 105px;
+    padding: 10px 16px;
+    background-color: rgb(6, 95, 212);
+    letter-spacing: 0.007px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Roboto', Arial, sans-serif;
+    align-items: center;
+    flex: 1 1 auto;
+    cursor: pointer;
+    font-stretch: 100%;
+}
+
+.edit-btn-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 24px;
+}

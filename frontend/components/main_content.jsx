@@ -1,6 +1,6 @@
 import React from 'react';
-import SignUpFormContainer from './session_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
+import SignupContainer from './session/signup_container';
+import LoginContainer from './session/login_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import VideoIndexContainer from './videos/video_index_container';
 import VideoShowContainer from './videos/video_show_container';
@@ -11,6 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import SideBar from './side_bar/side_bar';
 import { throttle } from 'lodash';
+import search_results_container from './search/search_results_container';
 
 class MainContent extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ class MainContent extends React.Component {
                         <Route path="/results" component={SearchResultsContainer} />
                     </Switch>
                 </div>
-            </>
+            </> 
         )
     }
 }

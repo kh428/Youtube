@@ -1,0 +1,229 @@
+$body-reg-theme: #f9f9f9;
+
+.video-show-container {
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    h2 {  
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+}
+
+.video-show {
+    padding-right: 24px;
+    padding-top: 24px;
+    margin-left: 24px;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    flex: 1;
+    // object-fit: cover;
+    
+}
+
+.video-container {
+    
+    video {
+        max-width: 1280px;
+        max-height: 720px;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        outline: none;
+    }
+}
+
+.video-actions {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.like-amount {
+    font-size: 13px;
+    margin-right: 8px;
+    color: rgb(144, 144, 144);
+}
+
+.likes-container {
+    // padding-right: 8px;
+    height: 40px;
+}
+
+.dislikes-container {
+    margin-left: 8px;
+    // padding-right: 8px;
+    height: 40px;
+}
+
+.like-button {
+    background-color: transparent;
+    transition: background-color 0.3s;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+}
+
+.like-button:active {
+    background-color: rgb(201, 201, 201);
+}
+
+
+
+.video-area-test {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+}
+
+.title-container {
+    padding: 20px 0 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.primary-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    .views {
+        font-size: 16px;
+        color: rgb(144, 144, 144);
+    }
+}
+
+.video-like {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background-color: $body-reg-theme;
+    cursor: pointer;
+}
+
+.video-like, .comment-like {
+    color: rgb(144, 144, 144);
+}
+
+.selected {
+    .video-like, .comment-like, .like-amount {
+        color: #065FD4;
+    }
+    .like-bar {
+        background-color: #065FD4;
+    }
+}
+
+.comment-like {
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+    outline: none;
+    border: none;
+    font-size: 13px;
+    background-color: $body-reg-theme;
+    cursor: pointer;
+}
+
+.comment-like:hover {
+    color: rgb(96,96,96);
+}
+
+.like-bar-container {
+    width: 100%;
+    // height: 2px;
+    background-color: #CCCCCC;
+    bottom: -8px;
+    position: absolute;
+}
+
+.like-bar {
+    height: 2px;
+    transition: width 0.3s;
+    background-color: #909090;
+}
+
+.description-container {
+    font-size: 14px;
+    font-weight: 400;
+    // padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.top-row {
+    margin-bottom: 12px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    .upload-info{
+        .uploader-name {
+            font-size: 14px;
+            color: black; 
+            font-weight: bold;
+        }
+        p {
+            font-size: 13px;
+            color: rgba(17, 17, 17, 0.6);
+        }
+    }
+    .description-btn-container {
+
+    }
+}
+
+.top-row-left {
+    display: flex;
+    align-items: center;
+}
+
+.uploader-pic-container {
+    margin-right: 16px;
+}
+
+.description {
+    white-space: pre-line;
+    margin-left: 64px;
+}
+
+.user-pic-show {
+  background-color: #aa47bc;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+  color: white;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  padding: 0;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.up-next-container {
+    padding-top: 24px;
+    padding-right: 24px;
+    width: 402px;
+    height: 100%;
+    // background-color: gray;
+    flex: 0 0 auto;
+}
+
+.up-next-item {
+    margin-bottom: 8px;
+}
+

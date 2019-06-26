@@ -1,4 +1,5 @@
 class Api::VideosController < ApplicationController
+
     def index
         if params[:search]
             search
@@ -8,30 +9,21 @@ class Api::VideosController < ApplicationController
     end
 
     def show
-        @video = Video.find_by(id: params[:id])
+        @video = Video.find(params[:id])
+        render :show
     end
 
     def create
-        return false unless authorized_user?
-        
-        @user = current_user
-        
         @video = Video.new(video_params)
-        @video.channel_id = current_user.channel.id
-
         if @video.save
             render :show
         else
-            render json: @video.errors.full_messages, status: 422
+            render json: @video.errors.full_messages, status: 404
         end
     end
 
     def update
-        return false unless authorized_user?
-
-        @user = current_user
-        @video = current_user.videos.find(params[:id])
-
+        @video = Video.find_by(id: params[:video][:id])
         if @video.update_attributes(video_params)
             render :show
         else
@@ -42,7 +34,7 @@ class Api::VideosController < ApplicationController
     def destroy
         @video = current_user.uploads.find(params[:id])
         @video.destroy
-        render json: video
+        render json: @video
     end
 
     def search
@@ -50,10 +42,9 @@ class Api::VideosController < ApplicationController
         query = "%#{query_words}%"
         @videos = Video.where("title ILIKE ?", query)
     end
-    
-    private 
+
     def video_params
-        params.require(:video).permit(:title, :description, :video, :thumbnail)
+        params.require(:video).permit(:id, :title, :description, :uploader_id, :videoUrl, :thumbnailUrl)
     end
 
 end

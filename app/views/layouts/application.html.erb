@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YourTube</title>
+    <title>Yourtube</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link rel="shortcut icon" href="/favicon.ico">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans|Roboto:400,500,600" rel="stylesheet">
+    <% if current_user %>
+      <script>
+        window.currentUser = {
+          "id": <%= current_user.id %>,
+          "first_name": "<%= current_user.first_name %>",
+          "last_name": "<%= current_user.last_name %>",
+          "email": "<%= current_user.email %>"
+        };
+      </script>
+    <% end %>
+    <script>
+        window.signUpLogo = "<%= image_url("account.svg") %>"
+        window.logo = "<%= image_url("logo.png") %>"
+        window.spinner = "<%= image_url("spinner-load.gif") %>"
+    </script>
   </head>
 
   <body>
     <%= yield %>
   </body>
+  
+  <footer>
+    
+  </footer>
 </html>
