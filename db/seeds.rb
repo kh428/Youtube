@@ -10,11 +10,11 @@ User.destroy_all
 Channel.destroy_all
 Video.destroy_all
 
-user1 = User.create!({username: "Guest", password: "123123123"})
-user2 = User.create!({username: "The Great American Kitchen", password: "TheGreatAmericanKitchen"})
-user3 = User.create!({username: "CopperPan", password: "CopperPan"})
-user4 = User.create!({username: "BerneseBreeder", password: "BerneseBreeder"})
-user5 = User.create!({username: "Amiyo", password: "Amiyo123123"})
+user1 = User.create!({first_name: "Guest", last_name: "Smith", email: "demo@gmail.com", password: "123123123"})
+user2 = User.create!({first_name: "The Great American Kitchen", last_name: "Smith", email: "thegreatamericankitchen@gmail.com", password: "TheGreatAmericanKitchen"})
+user3 = User.create!({first_name: "CopperPan", last_name: "Smith", email: "copperpan@gmail.com", password: "CopperPan"})
+user4 = User.create!({first_name: "BerneseBreeder", last_name: "Smith", email: "BerneseBreeder@gmail.com", password: "BerneseBreeder"})
+user5 = User.create!({first_name: "Amiyo", last_name: "Smith", email: "amiyo@gmail.com", password: "Amiyo123123"})
 
 
 channel1 = Channel.create!({name: user1.username, user_id: user1.id })
@@ -26,18 +26,18 @@ channel5 = Channel.create!({name: user5.username, user_id: user5.id })
 
 video1 = Video.create!({title: "What is a Maillard Reaction?", description: "The video explains what Maillard Reaction is along with the right way to cook a perfect steak.
 ", channel_id: channel1.id})
-video2 = Video.create!({title: "Heard of Seasoning in layers?", description: "Seasoning in layers is important when cooking. I will explain to you how.", channel_id: channel3.id})
-video3 = Video.create!({title: "[ASMR] Luffy Dinner", description: "Luffy is a four year old Bernese Mountain Dog Mix", channel_id: channel4.id})
-video4 = Video.create!({title: "Make Your Food Taste Better with a Cast Iron Pan", description: "Castiron pan is the ultimate cooking pan when searing a steak", channel_id: channel2.id})
-video5 = Video.create!({title: "10k Subscribers Thank You", description: "Thank you for subscribing to my channel", channel_id: channel2.id})
-video6 = Video.create!({title: "The Science Behind Avoiding Plantar Fasciitis", description: "Plantar fasciitis (PLAN-tur fas-e-I-tis) is one of the most common causes of heel pain. It involves inflammation of a thick band of tissue that runs across the bottom of your foot and connects your heel bone to your toes (plantar fascia). Plantar fasciitis commonly causes stabbing pain that usually occurs with your first steps in the morning. As you get up and move more, the pain normally decreases, but it might return after long periods of standing or after rising from sitting. Plantar fasciitis is more common in runners. In addition, people who are overweight and those who wear shoes with inadequate support have an increased risk of plantar fasciitis.", channel_id: channel5.id})
-video7 = Video.create!({title: "Knife Skill is not about How Fast You can chop.", description: "Knife skill comes from the right mechanism and being able to use the knife properly.", channel_id: channel5.id})
-video8 = Video.create!({title: "How to Sharpen an Usuba", description: "There is a different sharpening mechanism when it comes to single edged knives. ", channel_id: channel5.id})
-video9 = Video.create!({title: "Did You Know that 99.9% of Truffle Oils are Fake?", description: "Truffle oil is made out of synthetic compound made from labs. Essentially all truffle oils are never made with actual truffles. I will explain why.", channel_id: channel5.id})
-video10 = Video.create!({title: "Korean Galbi made with Oxtail", description: "Simple recipe about Korean Galbi made with oxtail", channel_id: channel5.id})
-video11 = Video.create!({title: "Who is Amiyo?", description: "A story about me, and my adventures.", channel_id: channel5.id})
-video12 = Video.create!({title: "What Knife Should I Get?", description: "The most question I get is about what knife I should get for the kitchen. I explain the knives I currently hold, and explain what my suggestion to you is.", channel_id: channel5.id})
-video13 = Video.create!({title: "Theory Behind Sharpening Knives", description: "This is a theory  I invented  about the science behind sharping knives based on the basic principles of triangle learned from any geometry class.", channel_id: channel5.id})
+video2 = Video.create!({title: "Heard of Seasoning in layers?", description: "Seasoning in layers is important when cooking. I will explain to you how.", channel_id: channel3.id, user_id: 3})
+video3 = Video.create!({title: "[ASMR] Luffy Dinner", description: "Luffy is a four year old Bernese Mountain Dog Mix", channel_id: channel4.id, user_id: 4})
+video4 = Video.create!({title: "Make Your Food Taste Better with a Cast Iron Pan", description: "Castiron pan is the ultimate cooking pan when searing a steak", channel_id: channel2.id, user_id: 2})
+video5 = Video.create!({title: "10k Subscribers Thank You", description: "Thank you for subscribing to my channel", channel_id: channel2.id, user_id: 2})
+video6 = Video.create!({title: "The Science Behind Avoiding Plantar Fasciitis", description: "Plantar fasciitis (PLAN-tur fas-e-I-tis) is one of the most common causes of heel pain. It involves inflammation of a thick band of tissue that runs across the bottom of your foot and connects your heel bone to your toes (plantar fascia). Plantar fasciitis commonly causes stabbing pain that usually occurs with your first steps in the morning. As you get up and move more, the pain normally decreases, but it might return after long periods of standing or after rising from sitting. Plantar fasciitis is more common in runners. In addition, people who are overweight and those who wear shoes with inadequate support have an increased risk of plantar fasciitis.", channel_id: channel5.id, user_id: 5})
+video7 = Video.create!({title: "Knife Skill is not about How Fast You can chop.", description: "Knife skill comes from the right mechanism and being able to use the knife properly.", channel_id: channel5.id, user_id: 5})
+video8 = Video.create!({title: "How to Sharpen an Usuba", description: "There is a different sharpening mechanism when it comes to single edged knives. ", channel_id: channel5.id, user_id: 5})
+video9 = Video.create!({title: "Did You Know that 99.9% of Truffle Oils are Fake?", description: "Truffle oil is made out of synthetic compound made from labs. Essentially all truffle oils are never made with actual truffles. I will explain why.", channel_id: channel5.id, user_id: 5})
+video10 = Video.create!({title: "Korean Galbi made with Oxtail", description: "Simple recipe about Korean Galbi made with oxtail", channel_id: channel5.id, user_id: 5})
+video11 = Video.create!({title: "Who is Amiyo?", description: "A story about me, and my adventures.", channel_id: channel5.id, user_id: 5})
+video12 = Video.create!({title: "What Knife Should I Get?", description: "The most question I get is about what knife I should get for the kitchen. I explain the knives I currently hold, and explain what my suggestion to you is.", channel_id: channel5.id, user_id: 5})
+video13 = Video.create!({title: "Theory Behind Sharpening Knives", description: "This is a theory  I invented  about the science behind sharping knives based on the basic principles of triangle learned from any geometry class.", channel_id: channel5.id, user_id: 5})
 
 
 
