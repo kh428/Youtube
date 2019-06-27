@@ -1,7 +1,6 @@
 import React from 'react';
 import CommentForm from './comment_form';
 import Comment from './comment';
-import LoadingSpinner from '../misc/loading_spinner';
 
 import { connect } from 'react-redux';
 

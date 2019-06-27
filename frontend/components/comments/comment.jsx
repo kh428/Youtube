@@ -142,15 +142,12 @@ class Comment extends React.Component {
                             {commentBody}
                         </p>
                         <div className="comment-action">
-                            {/* PUT A LIKES BUTTON HERE! */}
                             <Likes
                                 likeable_type="Comment"
                                 likeable_id={this.props.comment.id}
                                 sumLikes={this.props.comment.likes}
                                 sumDislikes={this.props.comment.dislikes}
                             />
-                            {/* <button className="comment-like"><i className="fas fa-thumbs-up"></i></button>
-                            <button className="comment-like"><i className="fas fa-thumbs-up fa-rotate-180"></i></button> */}
                             <button className="reply-btn" onClick={this.setReplyingTrue}>REPLY</button>
                         </div>
                     </div>

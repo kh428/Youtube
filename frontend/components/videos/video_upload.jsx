@@ -15,7 +15,6 @@ class VideoUpload extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.toggleForm = this.toggleForm.bind(this);
-        // this.handleFile = this.handleFile.bind(this);
     }
 
     handleInput(field) {

@@ -13,12 +13,7 @@ class VideoEdit extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
-        // this.handleFile = this.handleFile.bind(this);
     }
-
-    // componentDidMount() {
-    //     this.props.fetchVideo(this.props.match.params.videoId);
-    // }
 
     handleInput(field) {
         return (e) => {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import LoadingSpinner from '../misc/loading_spinner';
+import { withRouter } from 'react-router-dom';
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -150,7 +149,6 @@ class CommentForm extends React.Component {
                     </form>
                 </div>
             </div>
-            {/* { this.state.loading ? <LoadingSpinner /> : <></> } */}
             </>
         )
     }

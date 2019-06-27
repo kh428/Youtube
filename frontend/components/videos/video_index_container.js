@@ -7,9 +7,6 @@ const mapStateToProps = state => {
         videos: Object.values(state.entities.videos),
         users: state.entities.users
     };
-    // return {
-    //     videos: Object.values(state.entities.videos)
-    // };
 };
 
 const mapDispatchToProps = dispatch => {

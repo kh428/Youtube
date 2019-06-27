@@ -51,7 +51,6 @@ class Likes extends React.Component {
             this.props.history.push('/login');
             return;
         }
-        //Check if like already exists for current user
         if (likedFeature) {
             if (type === true && likedFeature.liked === true) {
                 this.setState({ like: { ...this.state.like, liked: null } }, () => this.props.deleteLike(likedFeature));

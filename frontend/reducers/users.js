@@ -16,12 +16,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
         case RECEIVE_COMMENT:
             return merge({}, state, {[action.user.id]: action.user});
-        // case RECEIVE_ALL_USERS:
-        // case RECEIVE_USER:
-        //     const newUser = { [action.user.id]: action.user };
-        //     return merge({}, state, newUser);
-        // case CLEAR_VIDEOS:
-        //     return {};
+
         default:
             return state;
     }

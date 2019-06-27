@@ -23,7 +23,6 @@ class VideoShow extends React.Component {
         if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
             this.props.clearVideos();
             this.props.fetchVideo(this.props.match.params.videoId);
-            // this.props.fetchVideos();
         }
     }
 
@@ -99,11 +98,7 @@ class VideoShow extends React.Component {
                             <p className="description">{this.props.video.description}</p>
                             
                         </div>
-                        {/* <div className="index-container">
-                            <div className="video-index-container">
-                                <VideoGrid videos={this.props.videos.slice(0, 6)} users={this.props.users} title={"Recommended"} />
-                            </div>
-                        </div> */}
+
                         <CommentsSection 
                             currentUser={this.props.currentUser} 
 
