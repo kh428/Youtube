@@ -58,7 +58,6 @@
   text-align: left;
   font-size: 14px;
   font-weight: bold;
-  /* font-weight should be 500, but won't work for a link */
 }
 
 .password-hint {
@@ -134,20 +133,6 @@
     border: 2px solid #d93025;
     padding: 6px 10px;
 }
-
-// .create-user-input {
-//   border: 1px solid #dadce0;
-//   border-radius: 4px;
-//   padding: 7px 11px;
-//   outline: none;
-//   font-family: sans-serif;
-//   font-size: 14px;
-//   width: 368px;
-//   box-sizing: border-box;
-//   text-align: left;
-//   margin: 1px 1px 1px 0;
-//   height: 36px;
-// }
 
 .input-group-signup {
     position: relative;
