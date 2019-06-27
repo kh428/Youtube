@@ -16,6 +16,7 @@ class Video < ApplicationRecord
 
     # validate :ensure_videoUrl
     # validate :ensure_thumbnailUrl
+    #commented out to seed data
 
     belongs_to :uploader,
         class_name: :User,

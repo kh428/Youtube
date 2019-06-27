@@ -35,7 +35,6 @@ class CommentsSection extends React.Component {
                     return <Comment 
                         key={index} 
                         commentId={comment.id} 
-                        // comments={this.props.comments} 
                         videoId={this.props.videoId} 
                         author={this.props.users[comment.authorId]} 
                         users={this.props.users}
