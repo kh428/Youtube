@@ -43,7 +43,7 @@ class Login extends React.Component {
     loginDemoUser(e) {
         let demoUser = {
             email: 'demo@gmail.com',
-            password: 'starwars'
+            password: '123123123'
         };
         this.props.login(demoUser)
             .then(() => this.props.history.push('/'));
@@ -61,22 +61,6 @@ class Login extends React.Component {
             }
         };
     }
-
-    //Make this using refs
-    // makeActive(type) {
-    //     return (e) => {
-    //         const inputGroup = document.getElementById(type);
-    //         if (e.type === "focus") {
-    //             inputGroup.classList.remove('filled');
-    //             inputGroup.classList.add('active');
-    //         } else {
-    //             inputGroup.classList.remove('active');
-    //             if (e.target.value !== "") {
-    //                 inputGroup.classList.add('filled');
-    //             } 
-    //         }
-    //     };
-    // }
 
     renderErrors() {
         return(

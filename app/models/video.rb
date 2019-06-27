@@ -14,8 +14,8 @@ class Video < ApplicationRecord
 
     validates :title, :description, presence: true
 
-    validate :ensure_videoUrl
-    validate :ensure_thumbnailUrl
+    # validate :ensure_videoUrl
+    # validate :ensure_thumbnailUrl
 
     belongs_to :uploader,
         class_name: :User,
