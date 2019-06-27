@@ -26,22 +26,7 @@ class SideBar extends React.Component {
                                     Home
                                 </div>
                             </div>
-                            {/* <div className="side-bar-item">
-                                <div>
-                                    <i className="fas fa-fire"></i>
-                                </div>
-                                <div>
-                                    Trending
-                                </div>
-                            </div>
-                            <div className="side-bar-item">
-                                <div>
-                                    <i className="fas fa-history"></i>
-                                </div>
-                                <div>
-                                    History
-                                </div>
-                            </div> */}
+                            
                         </div>
                         <div className="side-bar-section">
                             <div className="best-of-yourtube">
