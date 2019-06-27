@@ -7,13 +7,13 @@ class CommentForm extends React.Component {
         const authorId = this.props.currentUser ? this.props.currentUser.id : null;
         const videoId = this.props.videoId;
         let replying;
-        let btnsVisible;
+        let buttonsVisible;
         if (this.props.replying) {
             replying = true;
-            btnsVisible = true;
+            buttonsVisible = true;
         } else {
             replying = false;
-            btnsVisible = false;
+            buttonsVisible = false;
         }
         this.state = {
             comment: {
@@ -22,7 +22,7 @@ class CommentForm extends React.Component {
                 video_id: videoId,
                 parent_comment_id: this.props.parentCommentId || null
             },
-            btnsVisible: btnsVisible,
+            buttonsVisible: buttonsVisible,
             replying: replying,
             loading: false
         };
@@ -48,18 +48,18 @@ class CommentForm extends React.Component {
     }
 
     toggleButtons() {
-        if (this.state.btnsVisible) {
-            this.setState({btnsVisible: false});
+        if (this.state.buttonsVisible) {
+            this.setState({buttonsVisible: false});
             this.setState({ comment: { ...this.state.comment, body: '' } });
         } else {
-            this.setState({ btnsVisible: true });
+            this.setState({ buttonsVisible: true });
         }
     }
 
     inputToggle() {
         return e => {
-            if (!this.state.btnsVisible) {
-                this.setState({btnsVisible: true});
+            if (!this.state.buttonsVisible) {
+                this.setState({buttonsVisible: true});
             }
         };
     }
@@ -109,9 +109,9 @@ class CommentForm extends React.Component {
             userPic = (<button className={userPicClass}></button>);
         }
         if (this.state.comment.body.length > 0) {
-            buttonColorClass = "comment-btn"
+            buttonColorClass = "comment-button"
         } else {
-            buttonColorClass = "comment-btn-off"
+            buttonColorClass = "comment-button-off"
         }
         return (
             <>
@@ -130,12 +130,12 @@ class CommentForm extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        {this.props.currentUser && this.state.btnsVisible ? (
-                            <div className="comment-btn-row">
+                        {this.props.currentUser && this.state.buttonsVisible ? (
+                            <div className="comment-button-row">
                                 {this.state.replying ? (
-                                    <button type="button" className="cancel-btn" onClick={this.props.toggleReply}>CANCEL</button>
+                                    <button type="button" className="cancel-button" onClick={this.props.toggleReply}>CANCEL</button>
                                 ) : (
-                                    <button type="button" className="cancel-btn" onClick={this.toggleButtons}>CANCEL</button>
+                                    <button type="button" className="cancel-button" onClick={this.toggleButtons}>CANCEL</button>
                                 )}
                                 {this.state.comment.body === '' ? (
                                     <button className={buttonColorClass}>{buttonText}</button>

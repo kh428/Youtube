@@ -49,7 +49,7 @@ class VideoShow extends React.Component {
         let editVideoButton;
         let subscribeButton;
             if (this.props.currentUser && this.props.currentUser.id === this.props.video.uploaderId) {
-                editVideoButton = (<button className="edit-btn" onClick={this.handleEditLink}>EDIT VIDEO</button>);
+                editVideoButton = (<button className="edit-button" onClick={this.handleEditLink}>EDIT VIDEO</button>);
             } else {
                 subscribeButton = <button className="subscribeButton" onClick={this.handleSubscribe}>SUBSCRIBE</button>
             }
@@ -91,7 +91,7 @@ class VideoShow extends React.Component {
                                         <p>Published on {this.dateUploaded()}</p>
                                     </div>
                                 </div>
-                                <div className="description-btn-container">
+                                <div className="description-button-container">
                                     {editVideoButton}
                                 </div>
                             </div>

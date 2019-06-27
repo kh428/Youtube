@@ -148,7 +148,7 @@ class Comment extends React.Component {
                                 sumLikes={this.props.comment.likes}
                                 sumDislikes={this.props.comment.dislikes}
                             />
-                            <button className="reply-btn" onClick={this.setReplyingTrue}>REPLY</button>
+                            <button className="reply-button" onClick={this.setReplyingTrue}>REPLY</button>
                         </div>
                     </div>
 

@@ -37,7 +37,7 @@ class Search extends React.Component {
                         value={this.state.query}
                         onChange={this.update()} 
                     />
-                    <button className="search-btn">
+                    <button className="search-button">
                         <i id="search-icon" className="fas fa-search"></i>
                     </button>
                 </form>

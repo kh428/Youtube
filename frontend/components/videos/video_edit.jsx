@@ -112,10 +112,10 @@ class VideoEdit extends React.Component {
 
                                 {this.renderErrors()}
 
-                                <div className="edit-btn-row">
-                                    <input className="edit-btn" type="submit" value="SAVE" />
-                                    <button type="button" className="edit-btn" onClick={this.handleDelete}>DELETE</button>
-                                    <button type="button" className="edit-btn" onClick={this.handleCancel}>CANCEL</button>
+                                <div className="edit-button-row">
+                                    <input className="edit-button" type="submit" value="SAVE" />
+                                    <button type="button" className="edit-button" onClick={this.handleDelete}>DELETE</button>
+                                    <button type="button" className="edit-button" onClick={this.handleCancel}>CANCEL</button>
                                 </div>
                             </div>
                             

@@ -73,16 +73,12 @@ $body-reg-theme: #f9f9f9;
     background-color: $body-reg-theme;
 }
 
-.comment-input-underline-container {
-    // display: flex; 
-    // align-content: center;
-}
 
 .comment-input-underline {
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.comment-btn, .comment-btn-off, .cancel-btn, .reply-btn {
+.comment-button, .comment-button-off, .cancel-button, .reply-button {
     height: 36px;
     padding: 10px 16px;
     letter-spacing: 0.007px;
@@ -100,33 +96,33 @@ $body-reg-theme: #f9f9f9;
     font-stretch: 100%;
 }
 
-.comment-btn {
+.comment-button {
     background-color: rgb(6, 95, 212);
     margin-left: 8px;
     width: 101.53px;
 }
 
-.comment-btn:hover {
+.comment-button:hover {
     color: rgb(96, 96, 96);
 }
 
-.comment-btn-off {
+.comment-button-off {
     background-color: rgb(204,204,204);
     margin-left: 8px;
     width: 101.53px;
     cursor: default; 
 }
 
-.cancel-btn {
+.cancel-button {
     color: rgb(96, 96, 96);
     width: 85.08px;
 }
 
-.cancel-btn:active {
+.cancel-button:active {
     background-color: rgba(136, 136, 136, 0.2);
 }
 
-.reply-btn {
+.reply-button {
     color: rgb(96, 96, 96);
     width: 69px;
     height: 31px;
@@ -134,11 +130,11 @@ $body-reg-theme: #f9f9f9;
     flex-shrink: 0;
 }
 
-.reply-btn:active {
+.reply-button:active {
     background-color: rgba(136, 136, 136, 0.2);
 }
 
-.comment-btn-row {
+.comment-button-row {
     display: flex;
     justify-content: flex-end;
     width: 100%;

@@ -93,7 +93,7 @@ class VideoUpload extends React.Component {
                                 <div className="error-upload-container">
                                     {this.renderErrors()}
                                 </div>
-                                <input className="publish-btn" type="submit" value="Publish" />
+                                <input className="publish-button" type="submit" value="Publish" />
                                 {this.state.loading ? (<LoadingSpinner />) : (<></>)}
                             </>
                         )}       
