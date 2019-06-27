@@ -8,14 +8,15 @@ import CommentsSection from '../comments/comments_section';
 class VideoShow extends React.Component {
     constructor(props) {
         super(props);
-        this.formatDate = this.formatDate.bind(this);
+        this.dateUploaded = this.dateUploaded.bind(this);
         this.handleEditLink = this.handleEditLink.bind(this);
+        this.handleSubscribe = this.handleSubscribe.bind(this);
     }
 
     componentDidMount() {
+        this.props.fetchVideos();
         this.props.clearVideos();
         this.props.fetchVideo(this.props.match.params.videoId);
-        // this.props.fetchVideos();
     }
 
     componentDidUpdate(prevProps) {
@@ -26,24 +27,34 @@ class VideoShow extends React.Component {
         }
     }
 
-    formatDate() {
+    dateUploaded() {
         let date = new Date(this.props.video.createdAt);
         date = date.toString().split(" ");
         return date[1] + " " + date[2] + ", " + date[3];
     }
 
     handleEditLink() {
-        this.props.history.push(`/videos/${this.props.match.params.videoId}/edit`);
+        const videoId = this.props.match.params.videoId;
+        this.props.history.push(`/videos/${videoId}/edit`);
+    }
+
+    handleSubscribe() {
+
     }
 
     render() {
         if (this.props.video === undefined) {
             return null;
-        } else {
-            let descriptionButton;
+        } 
+        
+        let editVideoButton;
+        let subscribeButton;
             if (this.props.currentUser && this.props.currentUser.id === this.props.video.uploaderId) {
-                descriptionButton = (<button className="edit-btn" onClick={this.handleEditLink}>EDIT VIDEO</button>);
+                editVideoButton = (<button className="edit-btn" onClick={this.handleEditLink}>EDIT VIDEO</button>);
+            } else {
+                subscribeButton = <button className="subscribeButton" onClick={this.handleSubscribe}>SUBSCRIBE</button>
             }
+
             return (
                 <div className="video-show-container">
                     <div className="video-show">
@@ -55,6 +66,7 @@ class VideoShow extends React.Component {
                        
                         <div className="title-container">
                             <h2>{this.props.video.title}</h2>
+                            {/* <h2>{this.props.video.description}</h2> */}
                             <div className="primary-info">
                                 <div className="views">
                                     
@@ -77,19 +89,24 @@ class VideoShow extends React.Component {
                                     <button className="user-pic-show">{this.props.uploader.first_name.slice(0, 1).toUpperCase()}</button>
                                     <div className="upload-info">
                                         <p className="uploader-name">{this.props.uploader.first_name + " " + this.props.uploader.last_name}</p>
-                                        <p>Published on {this.formatDate()}</p>
+                                        <p>Published on {this.dateUploaded()}</p>
                                     </div>
                                 </div>
                                 <div className="description-btn-container">
-                                    {descriptionButton}
+                                    {editVideoButton}
                                 </div>
                             </div>
                             <p className="description">{this.props.video.description}</p>
                             
                         </div>
+                        {/* <div className="index-container">
+                            <div className="video-index-container">
+                                <VideoGrid videos={this.props.videos.slice(0, 6)} users={this.props.users} title={"Recommended"} />
+                            </div>
+                        </div> */}
                         <CommentsSection 
                             currentUser={this.props.currentUser} 
-                            // comments={this.props.comments} 
+
                             createComment={this.props.createComment}
                             videoId={this.props.video.id}
                             users={this.props.users}
@@ -97,12 +114,11 @@ class VideoShow extends React.Component {
                         />
 
                     </div>
-                    {/* <UpNext videos={this.props.videos} users={this.props.users}/> */}
+                    <UpNext videos={this.props.videos} users={this.props.users}/>
                 </div>
             )
 
         }
     }
-}
 
 export default withRouter(VideoShow);
