@@ -2,7 +2,7 @@ import React from 'react';
 import CommentForm from './comment_form';
 import CommentPopup from './comment_popup';
 import Likes from '../likes/likes';
-import { timeSincePost } from '../../util/format_util';
+import { timeAfterPost } from '../../util/format_util';
 import { connect } from 'react-redux';
 import { fetchComment } from '../../actions/comment_actions';
 
@@ -95,7 +95,7 @@ class Comment extends React.Component {
         let parent = this.props.comment;
         if (this.props.comment) {
             commentBody = this.props.comment.body;
-            commentDate = timeSincePost(this.props.comment.createdAt);
+            commentDate = timeAfterPost(this.props.comment.createdAt);
             commentAuthor = `${this.props.author.first_name} ${this.props.author.last_name}`;
         } else {
             commentBody = (<></>);

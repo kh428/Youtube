@@ -81,18 +81,18 @@ class Likes extends React.Component {
         }
         if (this.props.likeable_type === "Video") this.createBar();
     }
-
-    handleSubmit() {
-        
-        this.props.createLike(this.state);
-    }
-
+    
     createBar() {
         const total = this.state.sumLikes + this.state.sumDislikes;
         const percentage = total === 0 ? 50 : (this.state.sumLikes / total) * 100;
         this.likeBarStyle = {
             width: `${percentage}%`,
         };
+    }
+
+    handleSubmit() {
+        
+        this.props.createLike(this.state);
     }
 
     render() {

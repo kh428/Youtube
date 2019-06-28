@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { timeSincePost } from '../../util/format_util';
+import { timeAfterPost } from '../../util/format_util';
 
 class VideoItem extends React.Component {
     constructor(props) {
@@ -50,7 +50,7 @@ class VideoItem extends React.Component {
                             {this.props.user.first_name}
                         </div>
                         <div className="upload-time">
-                            {timeSincePost(this.props.video.createdAt)}
+                            {timeAfterPost(this.props.video.createdAt)}
                         </div>
                     </div>
                 </div>

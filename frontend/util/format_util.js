@@ -1,4 +1,4 @@
-export const timeSincePost = createdAt => {
+export const timeAfterPost = createdAt => {
     const today = new Date();
     const uploadDate = new Date(createdAt);
     const timeDiff = Math.floor((today - uploadDate) / 1000);
